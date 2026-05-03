@@ -1,0 +1,8 @@
+{
+  "name": "Motion Quiz App",
+  "description": "An interactive web app where users answer quiz questions by moving their body to the left or right side of the camera.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": []
+}
