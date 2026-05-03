@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import * as blazeface from '@tensorflow-models/blazeface';
-import { Camera, Edit, Play, Plus, Trash2, ArrowLeft, Check, X, ShieldAlert, CameraOff } from 'lucide-react';
+import { Camera, Edit, Play, Plus, Trash2, ArrowLeft, Check, X, ShieldAlert, CameraOff, Volume2, VolumeX } from 'lucide-react';
 
 import { cn } from './lib/utils';
 import { LOWER_GRADE_QUESTIONS, MIDDLE_GRADE_QUESTIONS, HIGHER_GRADE_QUESTIONS, type Question, type Side } from './data';
@@ -11,7 +11,10 @@ import './index.css';
 export default function App() {
   const [gameState, setGameState] = useState<'menu' | 'loading' | 'play' | 'result' | 'edit'>('menu');
   const [cameraEnabled, setCameraEnabled] = useState(true);
+  const [ttsEnabled, setTtsEnabled] = useState(true);
   const [countdownTime, setCountdownTime] = useState<5|10|20>(5);
+  const [questionCount, setQuestionCount] = useState<10|20|30>(10);
+  const [randomizedQuestions, setRandomizedQuestions] = useState<Question[]>([]);
   
   const [banks, setBanks] = useState({
     lower: LOWER_GRADE_QUESTIONS,
@@ -27,6 +30,9 @@ export default function App() {
 
   const startGame = (bank: 'lower' | 'middle' | 'higher') => {
     setActiveBankKey(bank);
+    const bankQuestions = banks[bank] || [];
+    const shuffled = [...bankQuestions].sort(() => Math.random() - 0.5).slice(0, questionCount);
+    setRandomizedQuestions(shuffled);
     setCurrentQuestionIndex(0);
     setScore(0);
     setGameState('loading');
@@ -54,8 +60,12 @@ export default function App() {
             onEdit={editBank} 
             cameraEnabled={cameraEnabled} 
             onToggleCamera={() => setCameraEnabled(!cameraEnabled)}
+            ttsEnabled={ttsEnabled}
+            onToggleTts={() => setTtsEnabled(!ttsEnabled)}
             countdownTime={countdownTime}
             setCountdownTime={setCountdownTime}
+            questionCount={questionCount}
+            setQuestionCount={setQuestionCount}
           />
         )}
         {gameState === 'edit' && (
@@ -69,11 +79,12 @@ export default function App() {
             key="play" 
             cameraEnabled={cameraEnabled}
             countdownDuration={countdownTime}
-            questions={activeQuestions} 
+            ttsEnabled={ttsEnabled}
+            questions={randomizedQuestions} 
             currentIndex={currentQuestionIndex}
             onNext={(wasCorrect) => {
               if (wasCorrect) setScore(s => s + 1);
-              if (currentQuestionIndex + 1 < activeQuestions.length) {
+              if (currentQuestionIndex + 1 < randomizedQuestions.length) {
                 setCurrentQuestionIndex(i => i + 1);
               } else {
                 setGameState('result');
@@ -82,7 +93,7 @@ export default function App() {
           />
         )}
         {gameState === 'result' && (
-          <ResultScreen key="result" score={score} total={activeQuestions.length} onHome={() => setGameState('menu')} onReplay={() => startGame(activeBankKey)} cameraEnabled={cameraEnabled} />
+          <ResultScreen key="result" score={score} total={randomizedQuestions.length} onHome={() => setGameState('menu')} onReplay={() => startGame(activeBankKey)} cameraEnabled={cameraEnabled} />
         )}
       </AnimatePresence>
     </div>
@@ -90,7 +101,7 @@ export default function App() {
 }
 
 // --- Menu Screen ---
-function MenuScreen({ onStart, onEdit, cameraEnabled, onToggleCamera, countdownTime, setCountdownTime }: { onStart: (b: 'lower'|'middle'|'higher') => void; onEdit: (b: 'lower'|'middle'|'higher') => void; cameraEnabled: boolean; onToggleCamera: () => void; countdownTime: 5|10|20; setCountdownTime: (t: 5|10|20) => void }) {
+function MenuScreen({ onStart, onEdit, cameraEnabled, onToggleCamera, ttsEnabled, onToggleTts, countdownTime, setCountdownTime, questionCount, setQuestionCount }: { onStart: (b: 'lower'|'middle'|'higher') => void; onEdit: (b: 'lower'|'middle'|'higher') => void; cameraEnabled: boolean; onToggleCamera: () => void; ttsEnabled: boolean; onToggleTts: () => void; countdownTime: 5|10|20; setCountdownTime: (t: 5|10|20) => void, questionCount: 10|20|30, setQuestionCount: (c: 10|20|30) => void }) {
   const [selectedBank, setSelectedBank] = useState<'lower'|'middle'|'higher'>('lower');
   return (
     <motion.div 
@@ -105,15 +116,24 @@ function MenuScreen({ onStart, onEdit, cameraEnabled, onToggleCamera, countdownT
         {cameraEnabled ? "透過移動你的身體到攝影機畫面的左側或右側來回答問題！" : "遊戲將每 5 秒自動切換題目並公佈正解，這時會需要由現場人員計分。"}
       </p>
 
-      <button 
-        onClick={onToggleCamera}
-        className={cn("mb-8 flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-transform active:scale-95", cameraEnabled ? "bg-emerald-500/20 text-emerald-400" : "bg-red-500/20 text-red-400")}
-      >
-        {cameraEnabled ? <Camera className="w-6 h-6"/> : <CameraOff className="w-6 h-6"/>}
-        {cameraEnabled ? "攝影機：已開啟" : "攝影機：已關閉 (自動播放)"}
-      </button>
+      <div className="flex gap-4 mb-8">
+        <button 
+          onClick={onToggleCamera}
+          className={cn("flex flex-col items-center gap-2 px-6 py-4 rounded-2xl font-bold transition-transform active:scale-95 text-sm sm:text-base cursor-pointer", cameraEnabled ? "bg-emerald-500/20 text-emerald-400" : "bg-red-500/20 text-red-400")}
+        >
+          {cameraEnabled ? <Camera className="w-8 h-8"/> : <CameraOff className="w-8 h-8"/>}
+          {cameraEnabled ? "攝影機：開啟" : "攝影機：關閉"}
+        </button>
+        <button 
+          onClick={onToggleTts}
+          className={cn("flex flex-col items-center gap-2 px-6 py-4 rounded-2xl font-bold transition-transform active:scale-95 text-sm sm:text-base cursor-pointer", ttsEnabled ? "bg-blue-500/20 text-blue-400" : "bg-slate-500/20 text-slate-400")}
+        >
+          {ttsEnabled ? <Volume2 className="w-8 h-8"/> : <VolumeX className="w-8 h-8"/>}
+          {ttsEnabled ? "語音朗讀：開啟" : "語音朗讀：關閉"}
+        </button>
+      </div>
 
-      <div className="flex gap-2 sm:gap-4 mb-8 bg-slate-900 p-2 rounded-2xl flex-wrap justify-center">
+      <div className="flex gap-2 sm:gap-4 mb-6 bg-slate-900 p-2 rounded-2xl flex-wrap justify-center">
         {(['lower', 'middle', 'higher'] as const).map(bank => (
           <button 
             key={bank}
@@ -125,17 +145,36 @@ function MenuScreen({ onStart, onEdit, cameraEnabled, onToggleCamera, countdownT
         ))}
       </div>
 
-      <div className="flex gap-2 sm:gap-4 mb-10 bg-slate-900 p-2 rounded-2xl flex-wrap justify-center">
-        <span className="flex items-center text-slate-400 font-bold px-2">倒數秒數：</span>
-        {[5, 10, 20].map(t => (
-          <button 
-            key={t}
-            onClick={() => setCountdownTime(t as 5|10|20)}
-            className={cn("px-4 py-2 sm:px-5 rounded-lg font-bold transition-colors whitespace-nowrap", countdownTime === t ? "bg-blue-500 text-slate-950 shadow-lg" : "text-slate-400 hover:text-white")}
-          >
-            {t} 秒
-          </button>
-        ))}
+      <div className="flex gap-4 mb-10">
+        <div className="flex gap-2 bg-slate-900 p-2 rounded-2xl flex-col items-center flex-1">
+          <span className="text-slate-400 font-bold px-2 mb-1">答題數量</span>
+          <div className="flex gap-1 sm:gap-2">
+            {[10, 20, 30].map(c => (
+              <button 
+                key={c}
+                onClick={() => setQuestionCount(c as 10|20|30)}
+                className={cn("px-3 py-2 sm:px-4 rounded-lg font-bold transition-colors whitespace-nowrap", questionCount === c ? "bg-purple-500 text-slate-950 shadow-lg" : "text-slate-400 hover:text-white")}
+              >
+                {c} 題
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex gap-2 bg-slate-900 p-2 rounded-2xl flex-col items-center flex-1">
+          <span className="text-slate-400 font-bold px-2 mb-1">倒數秒數</span>
+          <div className="flex gap-1 sm:gap-2">
+            {[5, 10, 20].map(t => (
+              <button 
+                key={t}
+                onClick={() => setCountdownTime(t as 5|10|20)}
+                className={cn("px-3 py-2 sm:px-4 rounded-lg font-bold transition-colors whitespace-nowrap", countdownTime === t ? "bg-blue-500 text-slate-950 shadow-lg" : "text-slate-400 hover:text-white")}
+              >
+                {t} 秒
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md">
@@ -296,7 +335,7 @@ function LoadingScreen({ cameraEnabled, onReady }: { cameraEnabled: boolean, onR
 }
 
 // --- Play Screen ---
-function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownDuration }: { questions: Question[], currentIndex: number, onNext: (correct: boolean) => void, cameraEnabled: boolean, countdownDuration: number }) {
+function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownDuration, ttsEnabled }: { questions: Question[], currentIndex: number, onNext: (correct: boolean) => void, cameraEnabled: boolean, countdownDuration: number, ttsEnabled: boolean }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const q = questions[currentIndex];
   
@@ -304,6 +343,49 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
   const [timeRemaining, setTimeRemaining] = useState(countdownDuration);
   const [phase, setPhase] = useState<'playing' | 'evaluating'>('playing');
   const [evalResult, setEvalResult] = useState<boolean | null>(null);
+  const [isSpeaking, setIsSpeaking] = useState(false);
+
+  // Setup TTS
+  useEffect(() => {
+    let isActive = true;
+
+    if (!ttsEnabled || phase !== 'playing') {
+      if (isActive) setIsSpeaking(false);
+      window.speechSynthesis.cancel();
+      return;
+    }
+    
+    setIsSpeaking(true);
+    window.speechSynthesis.cancel();
+    
+    const utterance = new SpeechSynthesisUtterance(q.text);
+    utterance.lang = 'zh-TW';
+    
+    utterance.onend = () => {
+      if (isActive) {
+        setIsSpeaking(false);
+      }
+    };
+    
+    utterance.onerror = () => {
+      if (isActive) {
+        setIsSpeaking(false); // fallback if error occurs
+      }
+    };
+    
+    // Add a slight delay to ensure cancel() finishes without aborting the new utterance
+    const timer = setTimeout(() => {
+      if (isActive) {
+        window.speechSynthesis.speak(utterance);
+      }
+    }, 100);
+    
+    return () => {
+      isActive = false;
+      clearTimeout(timer);
+      window.speechSynthesis.cancel();
+    };
+  }, [currentIndex, phase, ttsEnabled, q.text]);
 
   // Setup camera
   useEffect(() => {
@@ -374,7 +456,7 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
 
   // Countdown logic
   useEffect(() => {
-    if (phase !== 'playing') return;
+    if (phase !== 'playing' || isSpeaking) return;
     
     if (timeRemaining <= 0) {
       setPhase('evaluating');
@@ -408,7 +490,7 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [timeRemaining, phase, activeSide, q.correctAnswer, onNext, cameraEnabled]);
+  }, [timeRemaining, phase, activeSide, q.correctAnswer, onNext, cameraEnabled, isSpeaking, countdownDuration]);
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="relative min-h-screen w-full flex flex-col items-center justify-center bg-black overflow-hidden">
@@ -445,16 +527,20 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
         <div className="flex-1 flex items-center justify-center pointer-events-none">
           {phase === 'playing' ? (
             <motion.div 
-              key={timeRemaining}
+              key={isSpeaking ? 'speaking' : timeRemaining}
               initial={{ scale: 1.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.3 }}
               className={cn(
-                "text-8xl md:text-[12rem] font-bold drop-shadow-[0_0_30px_rgba(0,0,0,0.8)]",
-                 timeRemaining <= 2 ? "text-red-500" : "text-white"
+                "text-8xl md:text-[12rem] font-bold drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] flex items-center justify-center",
+                 !isSpeaking && timeRemaining <= 2 ? "text-red-500" : "text-white"
               )}
             >
-              {timeRemaining}
+              {isSpeaking ? (
+                <Volume2 className="w-32 h-32 md:w-48 md:h-48 text-blue-400 animate-pulse" />
+              ) : (
+                timeRemaining
+              )}
             </motion.div>
           ) : (
             <motion.div
@@ -502,7 +588,7 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
             <span className={cn(
                "text-6xl md:text-[8rem] lg:text-[10rem] font-black drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] transition-all duration-300 break-words text-center leading-tight w-full pb-[10vh]",
                activeSide === 'left' ? "text-white scale-110" : "text-emerald-100/80"
-            )}>{q.leftOption}</span>
+            )}>{q.leftOption.replace(' (對)', '').replace(' (錯)', '')}</span>
             <span className="absolute bottom-8 md:bottom-12 text-6xl md:text-8xl font-bold text-emerald-300 drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]">←</span>
           </div>
           
@@ -515,7 +601,7 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
              <span className={cn(
                "text-6xl md:text-[8rem] lg:text-[10rem] font-black drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] transition-all duration-300 break-words text-center leading-tight w-full pb-[10vh]",
                activeSide === 'right' ? "text-white scale-110" : "text-blue-100/80"
-            )}>{q.rightOption}</span>
+            )}>{q.rightOption.replace(' (對)', '').replace(' (錯)', '')}</span>
              <span className="absolute bottom-8 md:bottom-12 text-6xl md:text-8xl font-bold text-blue-300 drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]">→</span>
           </div>
         </div>
