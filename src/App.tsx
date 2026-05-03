@@ -29,6 +29,13 @@ export default function App() {
   const [score, setScore] = useState(0);
 
   const startGame = (bank: 'lower' | 'middle' | 'higher') => {
+    // Unlock Speech Synthesis on iOS/Safari by triggering a silent utterance directly from a user gesture
+    if (ttsEnabled) {
+      const unlockUtterance = new SpeechSynthesisUtterance('');
+      unlockUtterance.volume = 0;
+      window.speechSynthesis.speak(unlockUtterance);
+    }
+
     setActiveBankKey(bank);
     const bankQuestions = banks[bank] || [];
     const shuffled = [...bankQuestions].sort(() => Math.random() - 0.5).slice(0, questionCount);
@@ -360,21 +367,33 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
     
     const utterance = new SpeechSynthesisUtterance(q.text);
     utterance.lang = 'zh-TW';
+    // Prevent garbage collection bug in Safari/iOS
+    (window as any).__utterancePattern = utterance;
+
+    // Fallback timer in case the speech synthesis API gets stuck or fails fully without error
+    const estimatedSpeechTimeMs = Math.max(3000, q.text.length * 300 + 2000);
+    const fallbackTimer = setTimeout(() => {
+      if (isActive) {
+        setIsSpeaking(false);
+      }
+    }, estimatedSpeechTimeMs);
     
     utterance.onend = () => {
+      clearTimeout(fallbackTimer);
       if (isActive) {
         setIsSpeaking(false);
       }
     };
     
     utterance.onerror = () => {
+      clearTimeout(fallbackTimer);
       if (isActive) {
         setIsSpeaking(false); // fallback if error occurs
       }
     };
     
     // Add a slight delay to ensure cancel() finishes without aborting the new utterance
-    const timer = setTimeout(() => {
+    const startupTimer = setTimeout(() => {
       if (isActive) {
         window.speechSynthesis.speak(utterance);
       }
@@ -382,7 +401,8 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
     
     return () => {
       isActive = false;
-      clearTimeout(timer);
+      clearTimeout(startupTimer);
+      clearTimeout(fallbackTimer);
       window.speechSynthesis.cancel();
     };
   }, [currentIndex, phase, ttsEnabled, q.text]);
