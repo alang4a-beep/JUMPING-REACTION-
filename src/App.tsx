@@ -305,12 +305,11 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
   const [phase, setPhase] = useState<'playing' | 'evaluating'>('playing');
   const [evalResult, setEvalResult] = useState<boolean | null>(null);
 
-  // Setup camera and loop
+  // Setup camera
   useEffect(() => {
     if (!cameraEnabled) return;
 
     let stream: MediaStream | null = null;
-    let animationFrameId: number;
 
     const startCamera = async () => {
       try {
@@ -325,6 +324,19 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
       }
     };
     startCamera();
+
+    return () => {
+      if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+      }
+    };
+  }, [cameraEnabled]);
+
+  // Prediction loop
+  useEffect(() => {
+    if (!cameraEnabled) return;
+
+    let animationFrameId: number;
 
     const predictLoop = async () => {
       if (phase !== 'playing') {
@@ -357,11 +369,8 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
 
     return () => {
       cancelAnimationFrame(animationFrameId);
-      if (stream) {
-        stream.getTracks().forEach(track => track.stop());
-      }
     };
-  }, [phase]);
+  }, [phase, cameraEnabled]);
 
   // Countdown logic
   useEffect(() => {
