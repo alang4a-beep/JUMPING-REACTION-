@@ -479,37 +479,35 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
           )}
         </div>
 
-        {/* Split Options */}
-        <div className="absolute inset-0 flex pointer-events-none -z-10">
+        {/* Split Options Background & Line & Texts */}
+        <div className="absolute inset-0 pt-[20vh] flex pointer-events-none -z-10">
+          {/* Center Divider Line */}
+          <div className="absolute top-[20vh] bottom-0 left-1/2 w-1 md:w-2 -translate-x-1/2 bg-white/30 z-10 rounded-t-full shadow-[0_0_15px_rgba(255,255,255,0.5)]" />
+          
           <div className={cn(
-            "w-1/2 h-full flex items-end p-8 md:p-16 transition-colors duration-300",
-            activeSide === 'left' ? "bg-white/10" : "bg-transparent",
-            phase === 'evaluating' && activeSide === 'left' && evalResult ? "bg-emerald-500/40" : "",
-            phase === 'evaluating' && activeSide === 'left' && !evalResult ? "bg-red-500/40" : ""
-          )}></div>
-          <div className={cn(
-            "w-1/2 h-full flex items-end justify-end p-8 md:p-16 transition-colors duration-300",
-            activeSide === 'right' ? "bg-white/10" : "bg-transparent",
-            phase === 'evaluating' && activeSide === 'right' && evalResult ? "bg-emerald-500/40" : "",
-            phase === 'evaluating' && activeSide === 'right' && !evalResult ? "bg-red-500/40" : ""
-          )}></div>
-        </div>
-
-        {/* Option Texts */}
-        <div className="absolute bottom-12 w-full flex px-6 md:px-16 pb-8 h-40">
-          <div className="w-1/2 flex flex-col justify-end">
-            <span className="text-xl font-bold text-emerald-300 tracking-widest mb-2 drop-shadow-md">左側</span>
+            "relative w-1/2 h-full flex flex-col items-center justify-center p-4 md:p-8 transition-colors duration-300",
+            activeSide === 'left' ? "bg-white/20 backdrop-blur-sm" : "bg-transparent",
+            phase === 'evaluating' && activeSide === 'left' && evalResult ? "bg-emerald-500/50 backdrop-blur-md" : "",
+            phase === 'evaluating' && activeSide === 'left' && !evalResult ? "bg-red-500/50 backdrop-blur-md" : ""
+          )}>
             <span className={cn(
-               "text-3xl md:text-5xl font-black drop-shadow-xl transition-all duration-300 break-words pr-4",
-               activeSide === 'left' ? "text-white scale-105 origin-bottom-left" : "text-white/60"
+               "text-6xl md:text-[8rem] lg:text-[10rem] font-black drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] transition-all duration-300 break-words text-center leading-tight w-full pb-[10vh]",
+               activeSide === 'left' ? "text-white scale-110" : "text-emerald-100/80"
             )}>{q.leftOption}</span>
+            <span className="absolute bottom-8 md:bottom-12 text-6xl md:text-8xl font-bold text-emerald-300 drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]">←</span>
           </div>
-          <div className="w-1/2 flex flex-col justify-end items-end text-right">
-             <span className="text-xl font-bold text-blue-300 tracking-widest mb-2 drop-shadow-md">右側</span>
+          
+          <div className={cn(
+            "relative w-1/2 h-full flex flex-col items-center justify-center p-4 md:p-8 transition-colors duration-300",
+            activeSide === 'right' ? "bg-white/20 backdrop-blur-sm" : "bg-transparent",
+            phase === 'evaluating' && activeSide === 'right' && evalResult ? "bg-emerald-500/50 backdrop-blur-md" : "",
+            phase === 'evaluating' && activeSide === 'right' && !evalResult ? "bg-red-500/50 backdrop-blur-md" : ""
+          )}>
              <span className={cn(
-               "text-3xl md:text-5xl font-black drop-shadow-xl transition-all duration-300 break-words pl-4",
-               activeSide === 'right' ? "text-white scale-105 origin-bottom-right" : "text-white/60"
+               "text-6xl md:text-[8rem] lg:text-[10rem] font-black drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] transition-all duration-300 break-words text-center leading-tight w-full pb-[10vh]",
+               activeSide === 'right' ? "text-white scale-110" : "text-blue-100/80"
             )}>{q.rightOption}</span>
+             <span className="absolute bottom-8 md:bottom-12 text-6xl md:text-8xl font-bold text-blue-300 drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]">→</span>
           </div>
         </div>
       </div>
