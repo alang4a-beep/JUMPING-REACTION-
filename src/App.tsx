@@ -310,7 +310,9 @@ function LoadingScreen({ cameraEnabled, onReady }: { cameraEnabled: boolean, onR
       try {
         await tf.ready();
         if (!globalModel) {
-          globalModel = await blazeface.load();
+          globalModel = await blazeface.load({
+            scoreThreshold: 0.5, // 降低門檻，提升遠距離偵測能力
+          });
         }
         if (mounted) onReady();
       } catch (err: any) {
@@ -454,14 +456,16 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
           const end = predictions[0].bottomRight as [number, number];
           const centerX = (start[0] + end[0]) / 2;
           
-          // Original video left -> right represents user's right -> left because it's a front-facing camera.
-          // Wait, if a front-facing camera sees me move to my left, I appear on the right side of its raw capture.
-          // Therefore, large X = user is on their left.
-          // If we mirror the video display, user X on screen left = user is on their left.
-          const isLeft = centerX > video.videoWidth / 2;
-          setActiveSide(isLeft ? 'left' : 'right');
-        } else {
-          setActiveSide('none');
+          // Add a small dead zone (10%) in the center to prevent flickering and make detection more stable
+          const deadZoneWidth = video.videoWidth * 0.1;
+          const leftThreshold = video.videoWidth / 2 + deadZoneWidth / 2;
+          const rightThreshold = video.videoWidth / 2 - deadZoneWidth / 2;
+          
+          if (centerX > leftThreshold) {
+            setActiveSide('left');
+          } else if (centerX < rightThreshold) {
+            setActiveSide('right');
+          }
         }
       }
       animationFrameId = requestAnimationFrame(predictLoop);
@@ -476,6 +480,7 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
 
   // Countdown logic
   useEffect(() => {
+    // 只有在非朗讀狀態且正在遊玩時才開始倒數
     if (phase !== 'playing' || isSpeaking) return;
     
     if (timeRemaining <= 0) {
@@ -495,7 +500,7 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
         setActiveSide(q.correctAnswer);
         setEvalResult(true);
         setTimeout(() => {
-          onNext(false);
+          onNext(true); // 使用者點擊模式預設正確並到下一題，但這裡邏輯需與 App 組件一致
           setPhase('playing');
           setTimeRemaining(countdownDuration);
           setActiveSide('none');
@@ -529,15 +534,12 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
       {/* UI Overlay */}
       <div className="absolute inset-0 z-10 flex flex-col">
         {/* Top Header */}
-        <div className="pt-8 px-6 text-center">
-          <div className="inline-block bg-slate-900/80 backdrop-blur-md px-6 py-3 rounded-full border border-slate-800 shadow-2xl">
-            <span className="text-slate-400 font-semibold mr-2 drop-shadow-md">第 {currentIndex + 1} 題 / 共 {questions.length} 題</span>
-          </div>
+        <div className="pt-8 px-6 text-center relative z-20">
           <motion.h2 
             key={q.id}
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="mt-6 text-4xl md:text-6xl font-black text-white drop-shadow-xl tracking-tight max-w-4xl mx-auto leading-tight px-4"
+            className="text-4xl md:text-6xl font-black text-white drop-shadow-xl tracking-tight max-w-4xl mx-auto leading-tight px-4"
           >
             {q.text}
           </motion.h2>
@@ -600,29 +602,44 @@ function PlayScreen({ questions, currentIndex, onNext, cameraEnabled, countdownD
           <div className="absolute top-[20vh] bottom-0 left-1/2 w-1 md:w-2 -translate-x-1/2 bg-white/30 z-10 rounded-t-full shadow-[0_0_15px_rgba(255,255,255,0.5)]" />
           
           <div className={cn(
-            "relative w-1/2 h-full flex flex-col items-center justify-center p-4 md:p-8 transition-colors duration-300",
-            activeSide === 'left' ? "bg-white/20 backdrop-blur-sm" : "bg-transparent",
-            phase === 'evaluating' && activeSide === 'left' && evalResult ? "bg-emerald-500/50 backdrop-blur-md" : "",
-            phase === 'evaluating' && activeSide === 'left' && !evalResult ? "bg-red-500/50 backdrop-blur-md" : ""
+            "relative w-1/2 h-full flex flex-col items-center justify-center p-4 md:p-8 transition-all duration-500",
+            activeSide === 'left' ? "bg-blue-600/60 backdrop-blur-md shadow-[inset_0_0_100px_rgba(37,99,235,0.6)]" : "bg-transparent",
+            phase === 'evaluating' && activeSide === 'left' && evalResult ? "bg-emerald-500/70 backdrop-blur-xl" : "",
+            phase === 'evaluating' && activeSide === 'left' && !evalResult ? "bg-red-500/70 backdrop-blur-xl" : ""
           )}>
+            <div className={cn(
+               "text-5xl sm:text-6xl md:text-[7rem] lg:text-[9rem] font-black transition-all duration-300 break-words text-center leading-tight w-full pb-[10vh] px-4 md:px-8",
+               "[text-shadow:0_4px_30px_rgba(0,0,0,1),_0_0_20px_rgba(0,0,0,0.8)]",
+               activeSide === 'left' ? "text-white scale-110" : "text-slate-100 opacity-100"
+            )}>{q.leftOption}</div>
             <span className={cn(
-               "text-6xl md:text-[8rem] lg:text-[10rem] font-black drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] transition-all duration-300 break-words text-center leading-tight w-full pb-[10vh]",
-               activeSide === 'left' ? "text-white scale-110" : "text-emerald-100/80"
-            )}>{q.leftOption.replace(' (對)', '').replace(' (錯)', '')}</span>
-            <span className="absolute bottom-8 md:bottom-12 text-6xl md:text-8xl font-bold text-emerald-300 drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]">←</span>
+              "absolute bottom-8 md:bottom-12 text-6xl md:text-8xl font-bold transition-all duration-300",
+              activeSide === 'left' ? "text-blue-400 scale-150 animate-bounce" : "text-white opacity-80"
+            )}>←</span>
           </div>
           
           <div className={cn(
-            "relative w-1/2 h-full flex flex-col items-center justify-center p-4 md:p-8 transition-colors duration-300",
-            activeSide === 'right' ? "bg-white/20 backdrop-blur-sm" : "bg-transparent",
-            phase === 'evaluating' && activeSide === 'right' && evalResult ? "bg-emerald-500/50 backdrop-blur-md" : "",
-            phase === 'evaluating' && activeSide === 'right' && !evalResult ? "bg-red-500/50 backdrop-blur-md" : ""
+            "relative w-1/2 h-full flex flex-col items-center justify-center p-4 md:p-8 transition-all duration-500",
+            activeSide === 'right' ? "bg-yellow-500/60 backdrop-blur-md shadow-[inset_0_0_100px_rgba(234,179,8,0.6)]" : "bg-transparent",
+            phase === 'evaluating' && activeSide === 'right' && evalResult ? "bg-emerald-500/70 backdrop-blur-xl" : "",
+            phase === 'evaluating' && activeSide === 'right' && !evalResult ? "bg-red-500/70 backdrop-blur-xl" : ""
           )}>
+             <div className={cn(
+               "text-5xl sm:text-6xl md:text-[7rem] lg:text-[9rem] font-black transition-all duration-300 break-words text-center leading-tight w-full pb-[10vh] px-4 md:px-8",
+               "[text-shadow:0_4px_30px_rgba(0,0,0,1),_0_0_20px_rgba(0,0,0,0.8)]",
+               activeSide === 'right' ? "text-white scale-110" : "text-slate-100 opacity-100"
+            )}>{q.rightOption}</div>
              <span className={cn(
-               "text-6xl md:text-[8rem] lg:text-[10rem] font-black drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] transition-all duration-300 break-words text-center leading-tight w-full pb-[10vh]",
-               activeSide === 'right' ? "text-white scale-110" : "text-blue-100/80"
-            )}>{q.rightOption.replace(' (對)', '').replace(' (錯)', '')}</span>
-             <span className="absolute bottom-8 md:bottom-12 text-6xl md:text-8xl font-bold text-blue-300 drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]">→</span>
+               "absolute bottom-8 md:bottom-12 text-6xl md:text-8xl font-bold transition-all duration-300",
+               activeSide === 'right' ? "text-yellow-400 scale-150 animate-bounce" : "text-white opacity-80"
+             )}>→</span>
+          </div>
+        </div>
+
+        {/* Bottom Question Counter */}
+        <div className="absolute bottom-6 w-full flex justify-center pointer-events-none z-20">
+          <div className="inline-block bg-slate-900/80 backdrop-blur-md px-6 py-3 rounded-full border border-slate-800 shadow-xl">
+            <span className="text-slate-400 font-semibold drop-shadow-md">第 {currentIndex + 1} 題 / 共 {questions.length} 題</span>
           </div>
         </div>
       </div>

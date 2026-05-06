@@ -9,1060 +9,447 @@ export interface Question {
 }
 
 export const LOWER_GRADE_QUESTIONS: Question[] = [
-  {
-    "id": "lower-1",
-    "text": "【國語】「黏」這個字的注音，哪一個是正確的？",
-    "leftOption": "ㄋㄧㄢˊ",
-    "rightOption": "ㄌㄧㄢˊ",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-2",
-    "text": "【國語】「動作」的「作」部首是什麼？",
-    "leftOption": "人部",
-    "rightOption": "手部",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-3",
-    "text": "【國語】(是非) 「木」加上「帛」會變成「棉」這個字。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-4",
-    "text": "【國語】哪一個字的部首和「跑」一樣？",
-    "leftOption": "跳",
-    "rightOption": "打",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-5",
-    "text": "【國語】「開心」的相反詞是什麼？",
-    "leftOption": "快樂",
-    "rightOption": "難過",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "lower-6",
-    "text": "【國語】「一（ ）小狗」，括號裡應該填什麼？",
-    "leftOption": "隻",
-    "rightOption": "條",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-7",
-    "text": "【國語】(是非) 「早」的部首是日部。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-8",
-    "text": "【國語】「五顏六色」是用來形容什麼？",
-    "leftOption": "顏色很多",
-    "rightOption": "數字很大",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-9",
-    "text": "【國語】哪一個字的筆畫最多？",
-    "leftOption": "一",
-    "rightOption": "龜",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "lower-10",
-    "text": "【國語】(是非) 「大」和「小」是相反詞。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-11",
-    "text": "【國語】「說話」的「說」是哪一個部首？",
-    "leftOption": "言部",
-    "rightOption": "口部",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-12",
-    "text": "【國語】(是非) 寫字時，應該先寫左邊再寫右邊。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-13",
-    "text": "【國語】「蘋果」的第一個字怎麼念？",
-    "leftOption": "ㄆㄧㄥˊ",
-    "rightOption": "ㄆㄧㄣˊ",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-14",
-    "text": "【國語】哪一個字有「水」部？",
-    "leftOption": "渴",
-    "rightOption": "喝",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-15",
-    "text": "【國語】「天空好（ ）」，括號裡適合填什麼？",
-    "leftOption": "藍",
-    "rightOption": "甜",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-16",
-    "text": "【數學】5 + 4 等於多少？",
-    "leftOption": "8",
-    "rightOption": "9",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "lower-17",
-    "text": "【數學】10 減掉 3 等於多少？",
-    "leftOption": "7",
-    "rightOption": "6",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-18",
-    "text": "【數學】(是非) 兩個 5 加起來是 10。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-19",
-    "text": "【數學】一個星期有幾天？",
-    "leftOption": "5 天",
-    "rightOption": "7 天",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "lower-20",
-    "text": "【數學】時針指著 12，分針指著 12，是幾點？",
-    "leftOption": "12 點",
-    "rightOption": "6 點",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-21",
-    "text": "【數學】(是非) 15 比 20 還要大。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "lower-22",
-    "text": "【數學】哪一個形狀有三個角？",
-    "leftOption": "正方形",
-    "rightOption": "三角形",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "lower-23",
-    "text": "【數學】哥哥有 8 顆糖果，吃掉 2 顆，還剩下幾顆？",
-    "leftOption": "6 顆",
-    "rightOption": "10 顆",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-24",
-    "text": "【數學】(是非) 一年有 12 個月。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-25",
-    "text": "【數學】硬幣 10 元和 5 元加起來是多少錢？",
-    "leftOption": "15 元",
-    "rightOption": "50 元",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-26",
-    "text": "【數學】哪一個比較長？",
-    "leftOption": "鉛筆",
-    "rightOption": "橡皮擦",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-27",
-    "text": "【數學】教室裡有 12 個男生和 10 個女生，男生比女生多幾個？",
-    "leftOption": "2 個",
-    "rightOption": "22 個",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-28",
-    "text": "【數學】(是非) 雙手加起來總共有 10 根手指頭。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-29",
-    "text": "【數學】數字 19 的下一個數字是多少？",
-    "leftOption": "18",
-    "rightOption": "20",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "lower-30",
-    "text": "【數學】把一個披薩切成兩半，那是幾分之幾？",
-    "leftOption": "二分之一",
-    "rightOption": "三分之一",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-31",
-    "text": "【生活】過馬路時，看到什麼顏色的燈可以走？",
-    "leftOption": "紅燈",
-    "rightOption": "綠燈",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "lower-32",
-    "text": "【生活】(是非) 飯前洗手可以預防肚子痛生病。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-33",
-    "text": "【生活】哪一種動物會「汪汪」叫？",
-    "leftOption": "狗",
-    "rightOption": "貓",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-34",
-    "text": "【生活】白天天空上最亮的是什麼？",
-    "leftOption": "太陽",
-    "rightOption": "月亮",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-35",
-    "text": "【生活】(是非) 我們可以把垃圾丟到河裡。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "lower-36",
-    "text": "【生活】口渴了喝什麼最健康？",
-    "leftOption": "白開水",
-    "rightOption": "汽水",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-37",
-    "text": "【生活】看到老師應該怎麼做？",
-    "leftOption": "轉身跑掉",
-    "rightOption": "說老師好",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "lower-38",
-    "text": "【生活】(是非) 蝴蝶是從毛毛蟲變來的。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-39",
-    "text": "【生活】去圖書館應該要保持什麼態度？",
-    "leftOption": "安靜",
-    "rightOption": "大聲唱歌",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-40",
-    "text": "【生活】打噴嚏的時候應該怎麼辦？",
-    "leftOption": "摀住口鼻",
-    "rightOption": "對著別人打",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-41",
-    "text": "【生活】(是非) 刷牙是為了讓牙齒不生病。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-42",
-    "text": "【生活】下雨天出門需要帶什麼？",
-    "leftOption": "太陽眼鏡",
-    "rightOption": "雨傘",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "lower-43",
-    "text": "【生活】哪一個是交通工具？",
-    "leftOption": "公車",
-    "rightOption": "冰箱",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-44",
-    "text": "【生活】(是非) 迷路的時候可以找警察叔叔幫忙。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-45",
-    "text": "【生活】吃完飯的碗盤應該放在哪裡？",
-    "leftOption": "洗碗槽",
-    "rightOption": "床上",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-46",
-    "text": "【生活】哪一種植物會結出紅色的蘋果？",
-    "leftOption": "蘋果樹",
-    "rightOption": "玫瑰花",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-47",
-    "text": "【生活】(是非) 睡覺前不需要把玩具收好。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "lower-48",
-    "text": "【生活】冬天覺得冷的時候可以穿什麼？",
-    "leftOption": "泳衣",
-    "rightOption": "外套",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "lower-49",
-    "text": "【生活】誰在醫院幫我們看病？",
-    "leftOption": "醫生",
-    "rightOption": "廚師",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "lower-50",
-    "text": "【生活】(是非) 我們要愛護小動物，不隨便欺負牠們。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  }
+  // 國語 1-41
+  { "id": "lower-1", "text": "【國語】「黏」這個字的注音，哪一個是正確的？", "leftOption": "ㄋㄧㄢˊ", "rightOption": "ㄌㄧㄢˊ", "correctAnswer": "left" },
+  { "id": "lower-2", "text": "【國語】「動作」的「作」部首是什麼？", "leftOption": "人部", "rightOption": "手部", "correctAnswer": "left" },
+  { "id": "lower-3", "text": "【國語】(是非) 「木」加上「帛」會變成「棉」這個字。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-4", "text": "【國語】哪一個字的部首和「跑」一樣？", "leftOption": "跳", "rightOption": "打", "correctAnswer": "left" },
+  { "id": "lower-5", "text": "【國語】「開心」的相反詞是什麼？", "leftOption": "快樂", "rightOption": "難過", "correctAnswer": "right" },
+  { "id": "lower-6", "text": "【國語】「一（ ）小狗」，括號裡應該填什麼？", "leftOption": "隻", "rightOption": "條", "correctAnswer": "left" },
+  { "id": "lower-7", "text": "【國語】(是非) 「早」的部首是日部。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-8", "text": "【國語】「五顏六色」是用來形容什麼？", "leftOption": "數字很大", "rightOption": "顏色很多", "correctAnswer": "right" },
+  { "id": "lower-9", "text": "【國語】哪一個字的筆畫最多？", "leftOption": "一", "rightOption": "龜", "correctAnswer": "right" },
+  { "id": "lower-10", "text": "【國語】(是非) 「大」和「小」是相反詞。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-11", "text": "【國語】「說話」的「說」是哪一個部首？", "leftOption": "口部", "rightOption": "言部", "correctAnswer": "right" },
+  { "id": "lower-12", "text": "【國語】(是非) 寫字時，應該先寫左邊再寫右邊。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-13", "text": "【國語】「蘋果」的第一個字怎麼念？", "leftOption": "ㄆㄧㄣˊ", "rightOption": "ㄆㄧㄥˊ", "correctAnswer": "right" },
+  { "id": "lower-14", "text": "【國語】哪一個字有「水」部？", "leftOption": "渴", "rightOption": "喝", "correctAnswer": "left" },
+  { "id": "lower-15", "text": "【國語】「天空好（ ）」，括號裡適合填什麼？", "leftOption": "甜", "rightOption": "藍", "correctAnswer": "right" },
+  { "id": "lower-16", "text": "【國語】等( )ㄉㄞˋ，括號裡應該填哪一個字？", "leftOption": "呆", "rightOption": "待", "correctAnswer": "right" },
+  { "id": "lower-17", "text": "【國語】(是非) 玩「生字跑酷」遊戲時，我們可以一邊闖關一邊認識注音。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-18", "text": "【國語】哪一個字裡面有「木」這個字？", "leftOption": "樹", "rightOption": "跑", "correctAnswer": "left" },
+  { "id": "lower-19", "text": "【國語】「製」作的「製」，注音是什麼？", "leftOption": "ㄓˋ", "rightOption": "ㄗˋ", "correctAnswer": "left" },
+  { "id": "lower-20", "text": "【國語】「部」首的「部」，是哪一個部首？", "leftOption": "邑部（右耳旁）", "rightOption": "阜部（左耳旁）", "correctAnswer": "left" },
+  { "id": "lower-21", "text": "【國語】(是非) 「黏」土的「黏」注音是 ㄋㄧㄢˊ。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-22", "text": "【國語】「動作運用」這四個字裡面，哪一個字筆畫最少？", "leftOption": "動", "rightOption": "用", "correctAnswer": "right" },
+  { "id": "lower-23", "text": "【國語】看到長輩時，我們應該說什麼？", "leftOption": "您好", "rightOption": "走開", "correctAnswer": "left" },
+  { "id": "lower-24", "text": "【國語】請選出括號中正確的字：結( )ㄅㄧㄥ", "leftOption": "賓", "rightOption": "冰", "correctAnswer": "right" },
+  { "id": "lower-25", "text": "【國語】請選出括號中正確的字：貴( )ㄅㄧㄣ", "leftOption": "冰", "rightOption": "賓", "correctAnswer": "right" },
+  { "id": "lower-26", "text": "【國語】請選出括號中正確的字：風( )ㄓㄥ", "leftOption": "箏", "rightOption": "針", "correctAnswer": "left" },
+  { "id": "lower-27", "text": "【國語】請選出括號中正確的字：打( )ㄓㄣ", "leftOption": "針", "rightOption": "箏", "correctAnswer": "left" },
+  { "id": "lower-28", "text": "【國語】(是非) 寫字的時候，我們要保持正確的坐姿，眼睛不可以貼桌面太近。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-29", "text": "【國語】學習注音時，我們應該把哪一個音和「ㄓㄥ」排在一起分類練習，比較容易分辨？", "leftOption": "ㄅㄧㄥ", "rightOption": "ㄓㄣ", "correctAnswer": "right" },
+  { "id": "lower-30", "text": "【國語】哪一個音適合和「ㄅㄧㄥ」排在一起進行分類練習？", "leftOption": "ㄅ一ㄣ", "rightOption": "ㄉㄞˋ", "correctAnswer": "left" },
+  { "id": "lower-31", "text": "【國語】唱歌的「歌」，題目如果是「唱( )ㄍㄜ」，括號裡要填哪個字？", "leftOption": "哥", "rightOption": "歌", "correctAnswer": "right" },
+  { "id": "lower-32", "text": "【國語】哪一個字的部首和「樹」一樣，都是木部？", "leftOption": "林", "rightOption": "江", "correctAnswer": "left" },
+  { "id": "lower-33", "text": "【國語】(是非) 「小狗汪汪叫」這句話裡面，「汪汪」是用來形容聲音的詞。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-34", "text": "【國語】下雨天要撐傘，題目如果是「撐( )ㄙㄢˇ」，括號裡填什麼字？", "leftOption": "散", "rightOption": "傘", "correctAnswer": "right" },
+  { "id": "lower-35", "text": "【國語】(是非) 鉛筆的「鉛」注音是 ㄑㄧㄢ。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-36", "text": "【國語】「美麗」的相反詞是什麼？", "leftOption": "漂亮", "rightOption": "醜陋", "correctAnswer": "right" },
+  { "id": "lower-37", "text": "【國語】跑步的「跑」，題目如果是「( )ㄆㄠˇ步」，括號裡要填什麼字？", "leftOption": "跑", "rightOption": "泡", "correctAnswer": "left" },
+  { "id": "lower-38", "text": "【國語】(是非) 「大」字下面加上一點，會變成「太」這個字。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-39", "text": "【國語】哪一個字有「口」部？", "leftOption": "打", "rightOption": "吃", "correctAnswer": "right" },
+  { "id": "lower-40", "text": "【國語】(是非) 「天空好黑，好像快要下雨了。」這是一個完整的句子。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-41", "text": "【國語】一( )蘋果，括號填什麼單位比較對？", "leftOption": "張", "rightOption": "顆", "correctAnswer": "right" },
+  // 數學 42-83
+  { "id": "lower-42", "text": "【數學】5 + 4 等於多少？", "leftOption": "9", "rightOption": "8", "correctAnswer": "left" },
+  { "id": "lower-43", "text": "【數學】10 減掉 3 等於多少？", "leftOption": "7", "rightOption": "6", "correctAnswer": "left" },
+  { "id": "lower-44", "text": "【數學】(是非) 兩個 5 加起來是 10。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-45", "text": "【數學】一個星期有幾天？", "leftOption": "7 天", "rightOption": "5 天", "correctAnswer": "left" },
+  { "id": "lower-46", "text": "【數學】時針指著 12，分針指著 12，是幾點？", "leftOption": "6 點", "rightOption": "12 點", "correctAnswer": "right" },
+  { "id": "lower-47", "text": "【數學】(是非) 15 比 20 還要大。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "left" },
+  { "id": "lower-48", "text": "【數學】哪一個形狀有三個角？", "leftOption": "三角形", "rightOption": "正方形", "correctAnswer": "left" },
+  { "id": "lower-49", "text": "【數學】哥哥有 8 顆糖果，吃掉 2 顆，還剩下幾顆？", "leftOption": "6 顆", "rightOption": "10 顆", "correctAnswer": "left" },
+  { "id": "lower-50", "text": "【數學】(是非) 一年有 12 個月。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-51", "text": "【數學】硬幣 10 元和 5 元加起來是多少錢？", "leftOption": "15 元", "rightOption": "50 元", "correctAnswer": "left" },
+  { "id": "lower-52", "text": "【數學】哪一個比較長？", "leftOption": "橡皮擦", "rightOption": "鉛筆", "correctAnswer": "right" },
+  { "id": "lower-53", "text": "【數學】教室裡有 12 個男生 and 10 個女生，男生比女生多幾個？", "leftOption": "22 個", "rightOption": "2 個", "correctAnswer": "right" },
+  { "id": "lower-54", "text": "【數學】(是非) 雙手加起來總共有 10 根手指頭。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-55", "text": "【數學】數字 19 的下一個數字是多少？", "leftOption": "18", "rightOption": "20", "correctAnswer": "right" },
+  { "id": "lower-56", "text": "【數學】把一個披薩切成兩半，那是幾分之幾？", "leftOption": "三分之一", "rightOption": "二分之一", "correctAnswer": "right" },
+  { "id": "lower-57", "text": "【數學】家裡有一隻 12 公斤的小狗，如果又買了一包 2 公斤的狗飼料，加起來總共是幾公斤？", "leftOption": "10 公斤", "rightOption": "14 公斤", "correctAnswer": "right" },
+  { "id": "lower-58", "text": "【數學】(是非) 買一杯加珍珠的厚鮮奶茶 60 元，付了 100 元硬幣，老闆要找回 40 元。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-59", "text": "【數學】哥哥每個星期六都去打排球 3 小時，兩個星期六總共打了幾小時？", "leftOption": "6 小時", "rightOption": "5 小時", "correctAnswer": "left" },
+  { "id": "lower-60", "text": "【數學】停車場裡有 3 輛電動車正在充電，又開來了 2 輛，現在總共有幾輛？", "leftOption": "4 輛", "rightOption": "5 輛", "correctAnswer": "right" },
+  { "id": "lower-61", "text": "【數學】(是非) 把一顆蘋果切成一半，會變成兩個半顆。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-62", "text": "【數學】時針指著 3，分針指著 12，是下午幾點？", "leftOption": "3 點", "rightOption": "12 點", "correctAnswer": "left" },
+  { "id": "lower-63", "text": "【數學】爸爸帶全家去武陵農場看櫻花，住了 2 個晚上，也就是幾天？", "leftOption": "2 天", "rightOption": "3 天", "correctAnswer": "right" },
+  { "id": "lower-86", "text": "【生活】哪一種動物會「汪汪」叫？", "leftOption": "貓", "rightOption": "狗", "correctAnswer": "right" },
+  { "id": "lower-87", "text": "【生活】白天天空上最亮的是什麼？", "leftOption": "月亮", "rightOption": "太陽", "correctAnswer": "right" },
+  { "id": "lower-88", "text": "【生活】(是非) 我們可以把垃圾丟到河裡。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "right" },
+  { "id": "lower-89", "text": "【生活】口渴了喝什麼最健康？", "leftOption": "白開水", "rightOption": "汽水", "correctAnswer": "left" },
+  { "id": "lower-90", "text": "【生活】看到老師應該怎麼做？", "leftOption": "轉身跑掉", "rightOption": "說老師好", "correctAnswer": "right" },
+  { "id": "lower-91", "text": "【生活】(是非) 蝴蝶是從毛毛蟲變來的。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-92", "text": "【生活】去圖書館應該要保持什麼態度？", "leftOption": "大聲唱歌", "rightOption": "安靜", "correctAnswer": "right" },
+  { "id": "lower-93", "text": "【生活】打噴嚏的時候應該怎麼辦？", "leftOption": "摀住口鼻", "rightOption": "對著別人打", "correctAnswer": "left" },
+  { "id": "lower-94", "text": "【生活】(是非) 刷牙是為了讓牙齒不生病。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-95", "text": "【生活】下雨天出門需要帶什麼？", "leftOption": "太陽眼鏡", "rightOption": "雨傘", "correctAnswer": "right" },
+  { "id": "lower-96", "text": "【生活】哪一個是交通工具？", "leftOption": "公車", "rightOption": "冰箱", "correctAnswer": "left" },
+  { "id": "lower-97", "text": "【生活】(是非) 迷路的時候可以找警察叔叔幫忙。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-98", "text": "【生活】吃完飯的碗盤應該放在哪裡？", "leftOption": "床上的", "rightOption": "洗碗槽", "correctAnswer": "right" },
+  { "id": "lower-99", "text": "【生活】哪一種植物會結出紅色的蘋果？", "leftOption": "蘋果樹", "rightOption": "玫瑰花", "correctAnswer": "left" },
+  { "id": "lower-100", "text": "【生活】(是非) 睡覺前不需要把玩具收好。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "right" },
+  { "id": "lower-101", "text": "【生活】冬天覺得冷的時候可以穿什麼？", "leftOption": "外套", "rightOption": "泳衣", "correctAnswer": "left" },
+  { "id": "lower-102", "text": "【生活】誰在醫院幫我們看病？", "leftOption": "廚師", "rightOption": "醫生", "correctAnswer": "right" },
+  { "id": "lower-103", "text": "【生活】(是非) 我們要愛護小動物，不隨便欺負牠們。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-104", "text": "【生活】帶狗狗去散步時，如果狗狗大便了，主人應該怎麼做？", "leftOption": "假裝沒看到", "rightOption": "用袋子撿起來丟進垃圾桶", "correctAnswer": "right" },
+  { "id": "lower-105", "text": "【生活】(是非) 在醫院的早療中心裡，幫助小朋友練習動作和學習的人是職能治療師。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-106", "text": "【生活】去泰國清邁旅遊時，天氣非常熱，應該穿什麼衣服比較合適？", "leftOption": "短袖衣服", "rightOption": "厚羽絨外套", "correctAnswer": "left" },
+  { "id": "lower-107", "text": "【生活】(是非) 洗手的時候，只要用水沖一下就好，不用使用肥皂。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "right" },
+  { "id": "lower-108", "text": "【生活】皮膚覺得乾燥粗糙的時候，可以塗抹什麼來保養？", "leftOption": "身體乳液", "rightOption": "醬油", "correctAnswer": "left" },
+  { "id": "lower-109", "text": "【生活】過馬路時，應該走在哪裡才安全？", "leftOption": "斑馬線", "rightOption": "馬路中間", "correctAnswer": "left" },
+  { "id": "lower-110", "text": "【生活】(是非) 垃圾分類可以保護地球，減少污染。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-111", "text": "【生活】如果你不小心撞到別人，應該說什麼？", "leftOption": "沒關係", "rightOption": "對不起", "correctAnswer": "right" },
+  { "id": "lower-112", "text": "【生活】(是非) 每天吃早餐可以讓我們有精神上課。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-113", "text": "【生活】哪一個是保護眼睛的好方法？", "leftOption": "多看綠色植物", "rightOption": "近距離看電視", "correctAnswer": "left" },
+  { "id": "lower-114", "text": "【生活】(是非) 過馬路時可以一邊玩手機一邊走。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "right" },
+  { "id": "lower-115", "text": "【生活】哪一個是健康的食物？", "leftOption": "青菜", "rightOption": "糖果", "correctAnswer": "left" },
+  { "id": "lower-116", "text": "【生活】(是非) 早睡早起對身體很好。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-117", "text": "【生活】中秋節通常會吃什麼？", "leftOption": "粽子", "rightOption": "月餅", "correctAnswer": "right" },
+  { "id": "lower-118", "text": "【生活】(是非) 我們要珍惜水資源，不可以浪費水。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-119", "text": "【生活】在學校口渴了要去哪裡裝水？", "leftOption": "洗手台", "rightOption": "飲水機", "correctAnswer": "right" },
+  { "id": "lower-120", "text": "【生活】(是非) 看到好朋友可以大聲喊他的綽號嘲笑他。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "left" },
+  { "id": "lower-121", "text": "【生活】端午節通常會有什麼活動？", "leftOption": "領紅包", "rightOption": "划龍舟", "correctAnswer": "right" },
+  { "id": "lower-122", "text": "【生活】(是非) 下雨天在走廊跑步很容易滑倒受傷。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-123", "text": "【生活】什麼動物有長長的鼻子？", "leftOption": "大象", "rightOption": "長頸鹿", "correctAnswer": "left" },
+  { "id": "lower-124", "text": "【生活】(是非) 自己的書包要自己整理。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-125", "text": "【生活】哪一個是夏天常見的水果？", "leftOption": "西瓜", "rightOption": "草莓", "correctAnswer": "left" },
+  { "id": "lower-126", "text": "【生活】(是非) 借別人東西要先經過主人的同意。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-127", "text": "【生活】肚子痛要去哪一個處室找護士阿姨？", "leftOption": "校長室", "rightOption": "醫務室/健康中心", "correctAnswer": "right" },
+  { "id": "lower-128", "text": "【生活】(是非) 垃圾隨手丟在地上沒關係。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "left" },
+  { "id": "lower-129", "text": "【生活】哪一個是冬天適合穿的衣服？", "leftOption": "背心", "rightOption": "毛衣", "correctAnswer": "right" },
+  { "id": "lower-130", "text": "【生活】(是非) 說話時要看著對方的眼睛，比較有禮貌。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-131", "text": "【生活】哪一種花通常在春天開？", "leftOption": "櫻花", "rightOption": "梅花", "correctAnswer": "left" },
+  { "id": "lower-132", "text": "【生活】(是非) 上課發言要先舉手。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-133", "text": "【生活】什麼動物會冬眠？", "leftOption": "小雞", "rightOption": "熊", "correctAnswer": "right" },
+  { "id": "lower-134", "text": "【生活】(是非) 飯後要記得刷牙，牙齒才不會蛀牙。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-135", "text": "【生活】哪一個是農曆新年會拿到的東西？", "leftOption": "聖誕襪", "rightOption": "紅包", "correctAnswer": "right" },
+  { "id": "lower-136", "text": "【生活】(是非) 回家第一件事應該先洗手。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-137", "text": "【生活】什麼動物脖子最長？", "leftOption": "斑馬", "rightOption": "長頸鹿", "correctAnswer": "right" },
+  { "id": "lower-138", "text": "【生活】(是非) 跟同學吵架要學習互相道歉合好。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-139", "text": "【生活】哪一種水果皮是紫色的？", "leftOption": "香蕉", "rightOption": "葡萄", "correctAnswer": "right" },
+  { "id": "lower-140", "text": "【生活】(是非) 自己的玩具玩完後要收好。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-141", "text": "【生活】太陽從哪一個方向升起？", "leftOption": "西方", "rightOption": "東方", "correctAnswer": "right" },
+  { "id": "lower-142", "text": "【生活】(是非) 在圖書館可以跑來跑去。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "left" },
+  { "id": "lower-143", "text": "【生活】什麼動物會變色？", "leftOption": "變色龍", "rightOption": "青蛙", "correctAnswer": "left" },
+  { "id": "lower-144", "text": "【生活】(是非) 多看電腦和手機會傷害視力。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-145", "text": "【生活】哪一種天氣最適合放風箏？", "leftOption": "有風的晴天", "rightOption": "下大雨的天氣", "correctAnswer": "left" },
+  { "id": "lower-146", "text": "【生活】(是非) 我們要聽長輩的話。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-147", "text": "【生活】什麼動物會擠奶給我們喝？", "leftOption": "老虎", "rightOption": "乳牛", "correctAnswer": "right" },
+  { "id": "lower-148", "text": "【生活】(是非) 打噴嚏要摀住嘴巴。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "lower-149", "text": "【生活】(是非) 晚上睡覺前要把散落的玩具收好。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "lower-150", "text": "【生活】冬天很冷的時候，出門要穿什麼？", "leftOption": "短袖", "rightOption": "外套", "correctAnswer": "right" }
 ];
 
 export const MIDDLE_GRADE_QUESTIONS: Question[] = [
-  {
-    "id": "middle-1",
-    "text": "【國語】「守株待兔」這個成語是用來比喻什麼？",
-    "leftOption": "妄想不勞而獲",
-    "rightOption": "跑得跟兔子一樣快",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-2",
-    "text": "【國語】(是非) 「動作運用」這四個字中，「動」和「用」都是動詞。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-3",
-    "text": "【國語】「不屈不（ ）」，括號內應填入哪個字？",
-    "leftOption": "撓",
-    "rightOption": "饒",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-4",
-    "text": "【國語】「高興」和下列哪一個詞是同義詞？",
-    "leftOption": "喜悅",
-    "rightOption": "悲傷",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-5",
-    "text": "【國語】(是非) 「白日依山盡」是李白的詩句。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-6",
-    "text": "【國語】「晶瑩剔透」通常用來形容什麼？",
-    "leftOption": "物體光潔透明",
-    "rightOption": "聲音非常響亮",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-7",
-    "text": "【國語】哪一個字的部首是「糸」部？",
-    "leftOption": "紅",
-    "rightOption": "缸",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-8",
-    "text": "【國語】(是非) 「因為...所以...」是因果複句。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-9",
-    "text": "【國語】「畫蛇添（ ）」，括號內應填入哪個字？",
-    "leftOption": "足",
-    "rightOption": "手",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-10",
-    "text": "【國語】「他的力氣很大，簡直像一頭牛。」這句話用了什麼修辭？",
-    "leftOption": "譬喻",
-    "rightOption": "擬人",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-11",
-    "text": "【國語】(是非) 寫信給長輩時，稱呼後面要加「冒號」。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-12",
-    "text": "【國語】「一馬當先」的意思是？",
-    "leftOption": "走在最前面帶頭",
-    "rightOption": "只有一匹馬",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-13",
-    "text": "【國語】下列哪一個是疑問句的標點符號？",
-    "leftOption": "！",
-    "rightOption": "？",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-14",
-    "text": "【國語】(是非) 「木」加上「喬」會變成「橋」字。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-15",
-    "text": "【國語】「五花八門」的意思是？",
-    "leftOption": "花朵開得很多",
-    "rightOption": "花樣繁多，變化多端",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-16",
-    "text": "【數學】8 的 9 倍是多少？",
-    "leftOption": "72",
-    "rightOption": "89",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-17",
-    "text": "【數學】45 除以 5 等於多少？",
-    "leftOption": "8",
-    "rightOption": "9",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-18",
-    "text": "【數學】(是非) 正方形的四個邊都一樣長。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-19",
-    "text": "【數學】1 公尺等於幾公分？",
-    "leftOption": "10 公分",
-    "rightOption": "100 公分",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-20",
-    "text": "【數學】買一杯 45 元的飲料，付了 100 元，要找回多少錢？",
-    "leftOption": "55 元",
-    "rightOption": "65 元",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-21",
-    "text": "【數學】(是非) 1/3 比 1/2 還要大。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-22",
-    "text": "【數學】一個長 5 公分、寬 4 公分的長方形，面積是多少平方公分？",
-    "leftOption": "9",
-    "rightOption": "20",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-23",
-    "text": "【數學】一公斤等於幾公克？",
-    "leftOption": "1000 公克",
-    "rightOption": "100 公克",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-24",
-    "text": "【數學】(是非) 一天有 24 小時。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-25",
-    "text": "【數學】時鐘上從下午 1 點走到下午 3 點，經過了幾分鐘？",
-    "leftOption": "60 分鐘",
-    "rightOption": "120 分鐘",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-26",
-    "text": "【數學】300 減掉 125 等於多少？",
-    "leftOption": "175",
-    "rightOption": "185",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-27",
-    "text": "【數學】(是非) 任何數字乘以 0，答案都是 0。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-28",
-    "text": "【數學】一個三角形最多有幾個直角？",
-    "leftOption": "1 個",
-    "rightOption": "3 個",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-29",
-    "text": "【數學】有 24 顆蘋果，平分給 6 個人，每個人可以拿到幾顆？",
-    "leftOption": "4 顆",
-    "rightOption": "6 顆",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-30",
-    "text": "【數學】媽媽買了 3 盒餅乾，每盒有 12 片，總共有幾片？",
-    "leftOption": "15 片",
-    "rightOption": "36 片",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-31",
-    "text": "【社會】寄信要貼什麼東西，郵差才會幫忙送？",
-    "leftOption": "郵票",
-    "rightOption": "鈔票",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-32",
-    "text": "【社會】(是非) 警察局是負責維護治安、抓壞人的地方。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-33",
-    "text": "【社會】遇到火災時，應該撥打哪一支電話號碼？",
-    "leftOption": "119",
-    "rightOption": "110",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-34",
-    "text": "【社會】誰是負責在學校裡教導我們知識的人？",
-    "leftOption": "里長",
-    "rightOption": "老師",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-35",
-    "text": "【社會】(是非) 搭乘捷運時，可以在車廂內吃東西和喝飲料。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-36",
-    "text": "【社會】買東西的時候，索取統一發票有什麼好處？",
-    "leftOption": "可以對獎",
-    "rightOption": "買東西會變便宜",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-37",
-    "text": "【社會】下列哪一個是台灣的原住民族？",
-    "leftOption": "阿美族",
-    "rightOption": "大和族",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-38",
-    "text": "【社會】(是非) 我們應該尊重不同文化的同學。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-39",
-    "text": "【社會】負責打掃街道、收垃圾的辛苦人員是誰？",
-    "leftOption": "清潔隊員",
-    "rightOption": "消防員",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-40",
-    "text": "【社會】如果生病了，應該去哪個地方看診？",
-    "leftOption": "衛生所或診所",
-    "rightOption": "區公所",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-41",
-    "text": "【生活/自然】磁鐵的哪兩極互相靠近時會吸在一起？",
-    "leftOption": "同極",
-    "rightOption": "異極（N極和S極）",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-42",
-    "text": "【生活/自然】(是非) 昆蟲都有六隻腳。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-43",
-    "text": "【生活/自然】水遇冷結成冰的過程，我們稱為什麼？",
-    "leftOption": "融化",
-    "rightOption": "凝固",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-44",
-    "text": "【生活/自然】植物行光合作用主要是為了製造什麼？",
-    "leftOption": "養分",
-    "rightOption": "泥土",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-45",
-    "text": "【生活/自然】(是非) 太陽是從西方升起，東方落下。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-46",
-    "text": "【生活/自然】蜘蛛是不是昆蟲？",
-    "leftOption": "是",
-    "rightOption": "不是（蜘蛛有八隻腳）",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-47",
-    "text": "【生活/自然】哪一種天氣現象會出現閃電和雷聲？",
-    "leftOption": "雷陣雨",
-    "rightOption": "晴天",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-48",
-    "text": "【生活/自然】(是非) 隨手關燈可以節約能源。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "middle-49",
-    "text": "【生活/自然】把紙屑丟進垃圾桶，是屬於哪一種環保行為？",
-    "leftOption": "資源回收",
-    "rightOption": "維護環境整潔",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "middle-50",
-    "text": "【生活/自然】溫度計是測量什麼的工具？",
-    "leftOption": "溫度",
-    "rightOption": "重量",
-    "correctAnswer": "left"
-  }
+  // 國語 1-42
+  { "id": "middle-1", "text": "【國語】「守株待兔」這個成語是用來比喻什麼？", "leftOption": "跑得跟兔子一樣快", "rightOption": "妄想不勞而獲", "correctAnswer": "right" },
+  { "id": "middle-2", "text": "【國語】(是非) 「動作運用」這四個字中，「動」和「用」都是動詞。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "left" },
+  { "id": "middle-3", "text": "【國語】「不屈不（ ）」，括號內應填入哪個字？", "leftOption": "饒", "rightOption": "撓", "correctAnswer": "right" },
+  { "id": "middle-4", "text": "【國語】「高興」和下列哪一個詞是同義詞？", "leftOption": "喜悅", "rightOption": "悲傷", "correctAnswer": "left" },
+  { "id": "middle-5", "text": "【國語】(是非) 「白日依山盡」是李白的詩句。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "right" },
+  { "id": "middle-6", "text": "【國語】「晶瑩剔透」通常用來形容什麼？", "leftOption": "聲音非常響亮", "rightOption": "物體光潔透明", "correctAnswer": "right" },
+  { "id": "middle-7", "text": "【國語】哪一個字的部首是「糸」部？", "leftOption": "紅", "rightOption": "缸", "correctAnswer": "left" },
+  { "id": "middle-8", "text": "【國語】(是非) 「因為...所以...」是因果複句。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-9", "text": "【國語】「畫蛇添（ ）」，括號內應填入哪個字？", "leftOption": "手", "rightOption": "足", "correctAnswer": "right" },
+  { "id": "middle-10", "text": "【國語】「他的力氣很大，簡直像一頭牛。」這句話用了什麼修辭？", "leftOption": "擬人", "rightOption": "譬喻", "correctAnswer": "right" },
+  { "id": "middle-11", "text": "【國語】(是非) 寫信給長輩時，稱呼後面要加「冒號」。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-12", "text": "【國語】「一馬當先」的意思是？", "leftOption": "只有一匹馬", "rightOption": "走在最前面帶頭", "correctAnswer": "right" },
+  { "id": "middle-13", "text": "【國語】下列哪一個是疑問句的標點符號？", "leftOption": "！", "rightOption": "？", "correctAnswer": "right" },
+  { "id": "middle-14", "text": "【國語】(是非) 「木」加上「喬」會變成「橋」字。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-15", "text": "【國語】「五花八門」的意思是？", "leftOption": "花朵開得很多", "rightOption": "花樣繁多，變化多端", "correctAnswer": "right" },
+  { "id": "middle-16", "text": "【國語】在進行早療評估時，治療師觀察孩子的「動作（ ）用」，括號內應填入哪個字？", "leftOption": "暈", "rightOption": "運", "correctAnswer": "right" },
+  { "id": "middle-17", "text": "【國語】(是非) 「他跑酷的動作非常靈活」這句話中，「靈活」是形容詞。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-18", "text": "【國語】「引人入勝」的意思是？", "leftOption": "風景或作品非常吸引人", "rightOption": "把別人推到陷阱裡", "correctAnswer": "left" },
+  { "id": "middle-19", "text": "【國語】哪一個字的部首和「黏」字相同？", "leftOption": "米", "rightOption": "黍", "correctAnswer": "right" },
+  { "id": "middle-20", "text": "【國語】「迫不及（ ）」，括號內應填入哪個字？", "leftOption": "呆", "rightOption": "待", "correctAnswer": "right" },
+  { "id": "middle-21", "text": "【國語】(是非) 寫日記時，不需要寫上天氣和日期。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "right" },
+  { "id": "middle-22", "text": "【國語】「汗流浹背」通常用來形容什麼情況？", "leftOption": "天氣很冷", "rightOption": "運動後流了很多汗", "correctAnswer": "right" },
+  { "id": "middle-23", "text": "【國語】請選出括號中正確的字：( )ㄓㄥ明", "leftOption": "震", "rightOption": "證", "correctAnswer": "right" },
+  { "id": "middle-24", "text": "【國語】請選出括號中正確的字：地( )ㄓㄣˋ", "leftOption": "震", "rightOption": "證", "correctAnswer": "left" },
+  { "id": "middle-25", "text": "【國語】(是非) 「爺爺今年歡度百歲壽辰」這句話裡的「壽辰」就是生日的意思。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-26", "text": "【國語】下列哪一個成語適合形容排球選手在場上反應非常迅速？", "leftOption": "眼明手快", "rightOption": "守株待兔", "correctAnswer": "left" },
+  { "id": "middle-27", "text": "【國語】翻譯外國遊戲卡牌時，最重要的原則是什麼？", "leftOption": "順序正確且意思通順", "rightOption": "隨便猜意思就好", "correctAnswer": "left" },
+  { "id": "middle-28", "text": "【國語】(是非) 「這個網頁遊戲的動畫是用 SVG 寫的。」這句話是一個完整的直述句。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-29", "text": "【國語】「大快朵頤」通常用來形容什麼情境？", "leftOption": "吃美味的燒肉吃得非常痛快", "rightOption": "肚子很痛", "correctAnswer": "left" },
+  { "id": "middle-30", "text": "【國語】「井底之蛙」比喻什麼樣的人？", "leftOption": "很會游泳的人", "rightOption": "見識淺薄的人", "correctAnswer": "right" },
+  { "id": "middle-31", "text": "【國語】(是非) 「他跑得像飛一樣快」這句話使用了誇飾修辭。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-32", "text": "【國語】哪一個字的部首是「水」部？", "leftOption": "放", "rightOption": "游", "correctAnswer": "right" },
+  { "id": "middle-33", "text": "【國語】「手不釋卷」形容什麼？", "leftOption": "手上一直拿著考卷", "rightOption": "非常勤奮好學", "correctAnswer": "right" },
+  { "id": "middle-34", "text": "【國語】(是非) 「因為...所以...」是表示條件關係的句型。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "left" },
+  { "id": "middle-35", "text": "【國語】把一句話完整說完，表示語氣結束的標點符號是？", "leftOption": "逗號", "rightOption": "句號", "correctAnswer": "right" },
+  { "id": "middle-36", "text": "【國語】(是非) 「畫蛇添足」是說多此一舉，反而弄巧成拙。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-37", "text": "【國語】「興高采烈」的意思是？", "leftOption": "非常高興、情緒熱烈的樣子", "rightOption": "生氣的樣子", "correctAnswer": "left" },
+  { "id": "middle-38", "text": "【國語】下列哪一個詞語的字音完全正確？", "leftOption": "活潑 (ㄆㄛ)", "rightOption": "寂寞 (ㄇㄛˋ)", "correctAnswer": "right" },
+  { "id": "middle-39", "text": "【國語】(是非) 「五顏六色」和「色彩繽紛」意思相近。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-40", "text": "【國語】「目不轉睛」形容什麼樣子？", "leftOption": "看得很專心", "rightOption": "眼睛生病了", "correctAnswer": "left" },
+  { "id": "middle-41", "text": "【國語】(是非) 寫信給平輩朋友時，開頭的稱呼可以寫「親愛的ＯＯ」。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-42", "text": "【國語】哪一個是表示疑問的語氣詞？", "leftOption": "嗎", "rightOption": "啊", "correctAnswer": "left" },
+  // 數學 43-85
+  { "id": "middle-43", "text": "【數學】8 的 9 倍是多少？", "leftOption": "72", "rightOption": "89", "correctAnswer": "left" },
+  { "id": "middle-44", "text": "【數學】45 除以 5 等於多少？", "leftOption": "8", "rightOption": "9", "correctAnswer": "right" },
+  { "id": "middle-45", "text": "【數學】(是非) 正方形的四個邊都一樣長。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-46", "text": "【數學】1 公尺等於幾公分？", "leftOption": "100 公分", "rightOption": "10 公分", "correctAnswer": "left" },
+  { "id": "middle-47", "text": "【數學】買一杯 45 元的飲料，付了 100 元，要找回多少錢？", "leftOption": "65 元", "rightOption": "55 元", "correctAnswer": "right" },
+  { "id": "middle-48", "text": "【數學】(是非) 1/3 比 1/2 還要大。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "right" },
+  { "id": "middle-49", "text": "【數學】一個長 5 公分、寬 4 公分的長方形，面積是多少平方公分？", "leftOption": "9", "rightOption": "20", "correctAnswer": "right" },
+  { "id": "middle-50", "text": "【數學】一公斤等於幾公克？", "leftOption": "100 公克", "rightOption": "1000 公克", "correctAnswer": "right" },
+  { "id": "middle-51", "text": "【數學】(是非) 一天有 24 小時。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-52", "text": "【數學】時鐘上從下午 1 點走到下午 3 點，經過了幾分鐘？", "leftOption": "60 分鐘", "rightOption": "120 分鐘", "correctAnswer": "right" },
+  { "id": "middle-53", "text": "【數學】300 減掉 125 等於多少？", "leftOption": "175", "rightOption": "185", "correctAnswer": "left" },
+  { "id": "middle-54", "text": "【數學】(是非) 任何數字乘以 0，答案都是 0。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-55", "text": "【數學】一個三角形最多有幾個直角？", "leftOption": "1 個", "rightOption": "3 個", "correctAnswer": "left" },
+  { "id": "middle-56", "text": "【數學】有 24 蘋果，平分給 6 個人，每個人可以拿到幾顆？", "leftOption": "4 顆", "rightOption": "6 顆", "correctAnswer": "left" },
+  { "id": "middle-57", "text": "【數學】媽媽買了 3 盒餅乾，每盒有 12 片，總共有幾片？", "leftOption": "36 片", "rightOption": "15 片", "correctAnswer": "left" },
+  { "id": "middle-58", "text": "【數學】滑雪新手租一套裝備要 1200 元，如果租了 3 天，總共要花多少錢？", "leftOption": "3600 元", "rightOption": "2400 元", "correctAnswer": "left" },
+  { "id": "middle-59", "text": "【數學】(是非) 電動車在超級充電站充了 50 度電，每度電 9 元，總共需要 450 元。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-60", "text": "【數學】密室逃脫遊戲的門票一張是 600 元，4 個朋友一起去玩，總共要付多少錢？", "leftOption": "2400 元", "rightOption": "1200 元", "correctAnswer": "left" },
+  { "id": "middle-61", "text": "【數學】買了一包 1500 公克的狗用關節保健品，也就是幾公斤幾公克？", "leftOption": "15 公斤", "rightOption": "1 公斤 500 公克", "correctAnswer": "right" },
+  { "id": "middle-62", "text": "【數學】排球場長 18 公尺、寬 9 公尺，它的周長是多少公尺？", "leftOption": "54 公尺", "rightOption": "27 公尺", "correctAnswer": "left" },
+  { "id": "middle-63", "text": "【數學】(是非) 從台灣飛到新加坡需要 4 個小時，如果是下午 1 點起飛，抵達時會是下午 5 點。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-64", "text": "【數學】一盒木製積木有 48 塊，平分給 6 個小朋友，每個人可以拿到幾塊？", "leftOption": "8 塊", "rightOption": "7 塊", "correctAnswer": "left" },
+  { "id": "middle-65", "text": "【數學】買了兩張去日本環球影城的門票，共花費 4200 元，一張門票是多少錢？", "leftOption": "2100 元", "rightOption": "2000 元", "correctAnswer": "left" },
+  { "id": "middle-66", "text": "【數學】一台 Tesla Model Y 去貼膜，費用是 65000 元，如果先付了 20000 元訂金，還要付多少錢？", "leftOption": "55000 元", "rightOption": "45000 元", "correctAnswer": "right" },
+  { "id": "middle-67", "text": "【數學】(是非) 每個月訂閱 Pokémon TCG Pocket 遊戲花費 300 元，一年（12個月）總共要花 3600 元。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-68", "text": "【數學】中壢的「挽肉と米」一份漢堡排套餐 600 元，爸爸和媽媽各點一份，加上 10% 服務費，總共要多少錢？", "leftOption": "1200 元", "rightOption": "1320 元", "correctAnswer": "right" },
+  { "id": "middle-69", "text": "【數學】排球訓練班一堂課 2.5 小時，如果這個月上了 4 堂課，總共訓練了幾個小時？", "leftOption": "10 小時", "rightOption": "12 小時", "correctAnswer": "left" },
+  { "id": "middle-70", "text": "【數學】(是非) 在 Steam 上買了一款 1200 元的遊戲，打對折（50% off）後是 600 元。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-71", "text": "【數學】距離爺爺的 100 歲生日還有 45 天，也就是幾個星期又幾天？", "leftOption": "7 個星期又 1 天", "rightOption": "6 個星期又 3 天", "correctAnswer": "right" },
+  { "id": "middle-72", "text": "【數學】買了一張日本上網 SIM 卡 450 元，付了 500 元，要找回多少錢？", "leftOption": "50 元", "rightOption": "150 元", "correctAnswer": "left" },
+  { "id": "middle-73", "text": "【數學】每個月訂閱遊戲的費用是 300 元，半年 (6個月) 總共要花多少錢？", "leftOption": "1800 元", "rightOption": "1200 元", "correctAnswer": "left" },
+  { "id": "middle-74", "text": "【數學】(是非) 長方形的面積算法是長乘上寬。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-75", "text": "【數學】排球館的場地租借一小時 800 元，租了 2 小時要多少錢？", "leftOption": "1600 元", "rightOption": "1000 元", "correctAnswer": "left" },
+  { "id": "middle-76", "text": "【數學】1 公斤等於多少公克？", "leftOption": "1000 公克", "rightOption": "100 公克", "correctAnswer": "left" },
+  { "id": "middle-77", "text": "【數學】(是非) 24 除以 6 等於 4，所以 6 乘以 4 等於 24。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-78", "text": "【數學】媽媽買了 3 盒壽司，每盒有 12 個，總共有幾個壽司？", "leftOption": "30 個", "rightOption": "36 個", "correctAnswer": "right" },
+  { "id": "middle-79", "text": "【數學】(是非) 分母是 5，分子是 3 的分數，讀作五分之三。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-80", "text": "【數學】一天有 24 小時，兩天有幾小時？", "leftOption": "48 小時", "rightOption": "36 小時", "correctAnswer": "left" },
+  { "id": "middle-81", "text": "【數學】(是非) 任何數字乘以 0，答案都會是 0。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-82", "text": "【數學】一條彩帶長 100 公分，剪掉 45 公分後，還剩下幾公分？", "leftOption": "65 公分", "rightOption": "55 公分", "correctAnswer": "right" },
+  { "id": "middle-83", "text": "【數學】(是非) 正三角形的三個角都一樣大。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-84", "text": "【數學】哥哥帶 500 元去買 220 元的電動車模型，會找回多少錢？", "leftOption": "280 元", "rightOption": "380 元", "correctAnswer": "left" },
+  { "id": "middle-85", "text": "【數學】一罐飲料 25 元，買 4 罐要多少錢？", "leftOption": "125 元", "rightOption": "100 元", "correctAnswer": "right" },
+  // 社會與自然 86-150
+  { "id": "middle-86", "text": "【社會】寄信要貼什麼東西，郵差才會幫忙送？", "leftOption": "郵票", "rightOption": "鈔票", "correctAnswer": "left" },
+  { "id": "middle-87", "text": "【社會】(是非) 警察局是負責維護治安、抓壞人的地方。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-88", "text": "【社會】遇到火災時，應該撥打哪一支電話號碼？", "leftOption": "110", "rightOption": "119", "correctAnswer": "right" },
+  { "id": "middle-89", "text": "【社會】誰是負責在學校裡教導我們知識的人？", "leftOption": "里長", "rightOption": "老師", "correctAnswer": "right" },
+  { "id": "middle-90", "text": "【社會】(是非) 搭乘捷運時，可以在車廂內吃東西和喝飲料。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "left" },
+  { "id": "middle-91", "text": "【社會】買東西的時候，索取統一發票有什麼好處？", "leftOption": "可以對獎", "rightOption": "買東西會變便宜", "correctAnswer": "left" },
+  { "id": "middle-92", "text": "【社會】下列哪一個是台灣的原住民族？", "leftOption": "大和族", "rightOption": "阿美族", "correctAnswer": "right" },
+  { "id": "middle-93", "text": "【社會】(是非) 我們應該尊重不同文化的同學。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-94", "text": "【社會】負責打掃街道、收垃圾的辛苦人員是誰？", "leftOption": "清潔隊員", "rightOption": "消防員", "correctAnswer": "left" },
+  { "id": "middle-95", "text": "【社會】如果生病了，應該去哪個地方看診？", "leftOption": "區公所", "rightOption": "衛生所或診所", "correctAnswer": "right" },
+  { "id": "middle-96", "text": "【自然】磁鐵的哪兩極互相靠近時會吸在一起？", "leftOption": "同極", "rightOption": "異極（N極和S極）", "correctAnswer": "right" },
+  { "id": "middle-97", "text": "【自然】(是非) 昆蟲都有六隻腳。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-98", "text": "【自然】水遇冷結成冰的過程，我們稱為什麼？", "leftOption": "凝固", "rightOption": "融化", "correctAnswer": "left" },
+  { "id": "middle-99", "text": "【自然】植物行光合作用主要是為了製造什麼？", "leftOption": "泥土", "rightOption": "養分", "correctAnswer": "right" },
+  { "id": "middle-100", "text": "【自然】(是非) 太陽是從西方升起，東方落下。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "right" },
+  { "id": "middle-101", "text": "【自然】蜘蛛是不是昆蟲？", "leftOption": "不是（蜘蛛有八隻腳）", "rightOption": "是", "correctAnswer": "left" },
+  { "id": "middle-102", "text": "【自然】哪一種天氣現象會出現閃電和雷聲？", "leftOption": "晴天", "rightOption": "雷陣雨", "correctAnswer": "right" },
+  { "id": "middle-103", "text": "【自然】(是非) 隨手關燈可以節約能源。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-104", "text": "【自然】把紙屑丟進垃圾桶，是屬於哪一種環保行為？", "leftOption": "維護環境整潔", "rightOption": "資源回收", "correctAnswer": "left" },
+  { "id": "middle-105", "text": "【自然】溫度計是測量什麼的工具？", "leftOption": "溫度", "rightOption": "重量", "correctAnswer": "left" },
+  { "id": "middle-106", "text": "【社會】如果要舉辦「身心障礙職業重建嘉年華」，通常會由哪一個政府部門協助辦理？", "leftOption": "警察局", "rightOption": "勞動局或社會局", "correctAnswer": "right" },
+  { "id": "middle-107", "text": "【社會】(是非) 泰國、新加坡和馬來西亞，都是位於東南亞的國家。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-108", "text": "【社會】去日本旅遊吃「敘敘苑」燒肉時，結帳要使用哪一種貨幣？", "leftOption": "日圓", "rightOption": "美金", "correctAnswer": "left" },
+  { "id": "middle-109", "text": "【社會】我們在網路上購買國外的遊戲（例如 Steam 平台），這屬於哪一種商業行為？", "leftOption": "傳統市場交易", "rightOption": "國際貿易", "correctAnswer": "right" },
+  { "id": "middle-110", "text": "【社會】(是非) 台灣的高速公路有提供電動車充電的休息站，這是一種交通公共設施的進步。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-111", "text": "【生活】狗狗如果覺得關節不舒服，主人應該帶牠去哪裡檢查？", "leftOption": "寵物美容店", "rightOption": "動物醫院", "correctAnswer": "right" },
+  { "id": "middle-112", "text": "【生活】滑雪時為了保護眼睛不被雪地反射的陽光傷害，必須戴上什麼？", "leftOption": "放大鏡", "rightOption": "雪鏡或太陽眼鏡", "correctAnswer": "right" },
+  { "id": "middle-113", "text": "【生活】(是非) 水楊酸是一種可以用來幫助皮膚代謝老廢角質的成分。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-114", "text": "【自然】植物生長的三大要素是什麼？", "leftOption": "泥土、花盆、肥料", "rightOption": "陽光、空氣、水", "correctAnswer": "right" },
+  { "id": "middle-115", "text": "【自然】冬天在日本越後湯澤看到的白雪，是水在什麼狀態下形成的？", "leftOption": "液態", "rightOption": "固態", "correctAnswer": "right" },
+  { "id": "middle-116", "text": "【社會】中壢區、平鎮區和青埔特區，這些地方都屬於台灣的哪一個縣市？", "leftOption": "新竹市", "rightOption": "桃園市", "correctAnswer": "right" },
+  { "id": "middle-117", "text": "【社會】(是非) 台灣的高速鐵路（高鐵）有在桃園設站，帶動了當地的發展。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-118", "text": "【社會】我們在手機上使用 Uber Eats 訂購漢堡王，這是屬於哪一種產業的服務？", "leftOption": "餐飲與物流服務業", "rightOption": "農業", "correctAnswer": "left" },
+  { "id": "middle-119", "text": "【社會】日本的哪一座山是活火山，也是日本的精神象徵，附近還有美麗的河口湖？", "leftOption": "阿里山", "rightOption": "富士山", "correctAnswer": "right" },
+  { "id": "middle-120", "text": "【社會】(是非) 到國外旅遊時，護照就像是我們在國外的身分證，必須妥善保管。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-121", "text": "【社會】如果去北歐的冰島或挪威看極光，應該要往地球的哪一個方向走？", "leftOption": "北方", "rightOption": "赤道", "correctAnswer": "left" },
+  { "id": "middle-122", "text": "【生活】狗狗如果腸胃不好，可以給牠補充什麼來幫助消化？", "leftOption": "巧克力", "rightOption": "益生菌", "correctAnswer": "right" },
+  { "id": "middle-123", "text": "【社會】(是非) 電動車（如特斯拉）不需要加汽油，它是靠電池提供動力來行駛的。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-124", "text": "【社會】在製作網頁時，常常會用到 HTML 這種語言，它是用來做什麼的？", "leftOption": "煮飯的食譜", "rightOption": "建立網頁的基本架構", "correctAnswer": "right" },
+  { "id": "middle-125", "text": "【自然】打排球的時候，球員在空中殺球，最後會掉回地面，是因為什麼力量的影響？", "leftOption": "地心引力", "rightOption": "磁力", "correctAnswer": "left" },
+  { "id": "middle-126", "text": "【生活】(是非) 為了保持身體健康，就算休假，我們也應該盡量維持規規律的睡眠時間。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-127", "text": "【社會】負責在學校教導我們知識的長輩是誰？", "leftOption": "老師", "rightOption": "警察", "correctAnswer": "left" },
+  { "id": "middle-128", "text": "【社會】(是非) 買東西拿統一發票，不但可以對獎，還可以防止店家逃漏稅。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-129", "text": "【社會】如果在路上看到有人需要緊急醫療幫忙，可以撥打什麼電話求救？", "leftOption": "110", "rightOption": "119", "correctAnswer": "right" },
+  { "id": "middle-130", "text": "【社會】台灣的原住民族中，哪一族通常會舉辦盛大的「豐年祭」？", "leftOption": "阿美族", "rightOption": "漢族", "correctAnswer": "left" },
+  { "id": "middle-131", "text": "【社會】(是非) 郵局可以幫我們寄信和包裹，也可以讓我們存錢。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-132", "text": "【社會】搭乘捷運時，為了別人的安全與衛生，車廂內不可以做什麼事？", "leftOption": "飲食", "rightOption": "閉目養神", "correctAnswer": "left" },
+  { "id": "middle-133", "text": "【社會】清潔隊員每天辛苦收垃圾，我們應該怎麼配合？", "leftOption": "做好垃圾分類", "rightOption": "隨便亂丟", "correctAnswer": "left" },
+  { "id": "middle-134", "text": "【社會】(是非) 消防局是專門負責滅火和救難的地方。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-135", "text": "【自然】水遇熱變成水蒸氣的過程叫做什麼？", "leftOption": "凝固", "rightOption": "蒸發", "correctAnswer": "right" },
+  { "id": "middle-136", "text": "【自然】植物需要什麼才能行光合作用製造養分？", "leftOption": "黑夜", "rightOption": "陽光、空氣、水", "correctAnswer": "right" },
+  { "id": "middle-137", "text": "【自然】(是非) 磁鐵的 N 極 and S 極互相靠近時會吸在一起。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-138", "text": "【自然】哪一種昆蟲小時候是毛毛蟲？", "leftOption": "螞蟻", "rightOption": "蝴蝶", "correctAnswer": "right" },
+  { "id": "middle-139", "text": "【自然】測量溫度的工具叫做什麼？", "leftOption": "尺", "rightOption": "溫度計", "correctAnswer": "right" },
+  { "id": "middle-140", "text": "【自然】(是非) 蜘蛛有八隻腳，所以牠在生物學上不屬於昆蟲。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-141", "text": "【自然】地球上哪一種地形的面積極大，充滿了鹹水？", "leftOption": "海洋", "rightOption": "沙漠", "correctAnswer": "left" },
+  { "id": "middle-142", "text": "【社會】(是非) 隨手關燈可以節約能源，保護地球。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-143", "text": "【自然】下列哪一種天氣現象會出現轟隆隆的聲音？", "leftOption": "下雪", "rightOption": "打雷", "correctAnswer": "right" },
+  { "id": "middle-144", "text": "【自然】影子是在物體的哪一面產生？", "leftOption": "背光面", "rightOption": "向光面", "correctAnswer": "left" },
+  { "id": "middle-145", "text": "【自然】(是非) 空氣雖然看不見，但是它有重量並占有空間。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "middle-146", "text": "【自然】什麼動物會在水裡用鰓呼吸？", "leftOption": "鳥", "rightOption": "魚", "correctAnswer": "right" },
+  { "id": "middle-147", "text": "【自然】(是非) 月亮自己不會發光，我們看到的光是它反射太陽的光。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "middle-148", "text": "【自然】春天來了，植物通常會有什麼變化？", "leftOption": "葉子全部掉光", "rightOption": "發芽開花", "correctAnswer": "right" },
+  { "id": "middle-149", "text": "【生活】我們平常喝的鮮奶，主要是哪一種動物生產的？", "leftOption": "豬", "rightOption": "乳牛", "correctAnswer": "right" },
+  { "id": "middle-150", "text": "【社會】(是非) 垃圾分類可以把有用的資源回收再利用，減少浪費。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" }
 ];
 
 export const HIGHER_GRADE_QUESTIONS: Question[] = [
-  {
-    "id": "higher-1",
-    "text": "【國語】「破釜沉舟」這個成語比喻什麼？",
-    "leftOption": "做事果決，義無反顧",
-    "rightOption": "船隻破洞沉沒",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-2",
-    "text": "【國語】(是非) 「汗牛充棟」是用來形容書籍極多。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-3",
-    "text": "【國語】「罄竹難（ ）」，括號內應填入哪個字？",
-    "leftOption": "書",
-    "rightOption": "數",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-4",
-    "text": "【國語】下列哪一首詩是唐代詩人李白的作品？",
-    "leftOption": "靜夜思",
-    "rightOption": "絕句",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-5",
-    "text": "【國語】(是非) 「太陽公公對我微笑」使用了擬人修辭。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-6",
-    "text": "【國語】「一丘之貉」通常帶有什麼樣的感情色彩？",
-    "leftOption": "褒義（讚美）",
-    "rightOption": "貶義（批評）",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "higher-7",
-    "text": "【國語】「出爾反爾」的意思是？",
-    "leftOption": "說話做事反覆無常",
-    "rightOption": "出去玩又馬上回來",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-8",
-    "text": "【國語】(是非) 律詩的頷聯和頸聯必須對仗。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-9",
-    "text": "【國語】「杞人憂天」比喻什麼？",
-    "leftOption": "缺乏根據的無謂憂慮",
-    "rightOption": "天氣變化很大",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-10",
-    "text": "【國語】「司空見慣」的意思是？",
-    "leftOption": "經常看到，不足為奇",
-    "rightOption": "從來沒看過",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-11",
-    "text": "【國語】(是非) 「鼎鼎大名」和「默默無聞」是相似詞。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "higher-12",
-    "text": "【國語】「風聲鶴（ ）」，括號內應填入哪個字？",
-    "leftOption": "唳",
-    "rightOption": "淚",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-13",
-    "text": "【國語】寫文章時，用來引用別人說過的話的標點符號是？",
-    "leftOption": "引號「」",
-    "rightOption": "書名號《》",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-14",
-    "text": "【國語】(是非) 古人說的「而立之年」是指三十歲。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-15",
-    "text": "【國語】「千鈞一髮」是用來形容什麼情況？",
-    "leftOption": "情況非常危險",
-    "rightOption": "頭髮很重",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-16",
-    "text": "【數學】0.5 換算成分數是多少？",
-    "leftOption": "1/2",
-    "rightOption": "1/5",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-17",
-    "text": "【數學】12 和 18 的最大公因數是多少？",
-    "leftOption": "6",
-    "rightOption": "36",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-18",
-    "text": "【數學】(是非) 質數是指只有 1 和自己兩個因數的整數。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-19",
-    "text": "【數學】一個正方體的邊長是 3 公分，它的體積是多少立方公分？",
-    "leftOption": "9",
-    "rightOption": "27",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "higher-20",
-    "text": "【數學】半徑 10 公分的圓，它的直徑是多少公分？",
-    "leftOption": "20",
-    "rightOption": "5",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-21",
-    "text": "【數學】(是非) 距離除以時間等於速率。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-22",
-    "text": "【數學】一件衣服定價 1000 元，打八折後是多少錢？",
-    "leftOption": "800 元",
-    "rightOption": "200 元",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-23",
-    "text": "【數學】3/4 加上 1/4 等於多少？",
-    "leftOption": "1",
-    "rightOption": "4/8",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-24",
-    "text": "【數學】(是非) 圓周率大約等於 3.14。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-25",
-    "text": "【數學】25% 換算成小數是多少？",
-    "leftOption": "0.25",
-    "rightOption": "2.5",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-26",
-    "text": "【數學】一個三角形的底是 10，高是 5，面積是多少？",
-    "leftOption": "50",
-    "rightOption": "25",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "higher-27",
-    "text": "【數學】(是非) 1 公升等於 1000 毫升。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-28",
-    "text": "【數學】50 的 20% 是多少？",
-    "leftOption": "10",
-    "rightOption": "25",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-29",
-    "text": "【數學】如果 x + 5 = 12，那 x 是多少？",
-    "leftOption": "7",
-    "rightOption": "17",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-30",
-    "text": "【數學】(是非) 任何大於 0 的偶數都能被 2 整除。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-31",
-    "text": "【社會】台灣最高的山是哪一座？",
-    "leftOption": "玉山",
-    "rightOption": "阿里山",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-32",
-    "text": "【社會】(是非) 台灣是位於太平洋上的一個島嶼。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-33",
-    "text": "【社會】清朝時期，負責在台灣推動現代化建設的巡撫是誰？",
-    "leftOption": "劉銘傳",
-    "rightOption": "鄭成功",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-34",
-    "text": "【社會】政府的權力分為行政、立法和什麼？",
-    "leftOption": "司法",
-    "rightOption": "軍事",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-35",
-    "text": "【社會】(是非) 憲法是國家最高的法律，其他法律不能抵觸憲法。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-36",
-    "text": "【社會】台灣四面環海，東邊面對的是哪一個大洋？",
-    "leftOption": "太平洋",
-    "rightOption": "大西洋",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-37",
-    "text": "【社會】為了保護環境，購買家電時可以認明什麼標章？",
-    "leftOption": "節能標章",
-    "rightOption": "認證標章",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-38",
-    "text": "【社會】(是非) 股票和 ETF 都是現代人常見的投資理財工具。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-39",
-    "text": "【社會】世界上人口最多的洲是哪一洲？",
-    "leftOption": "亞洲",
-    "rightOption": "非洲",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-40",
-    "text": "【社會】台灣有「科技重鎮」之稱的科學園區最早設立在哪個城市？",
-    "leftOption": "新竹",
-    "rightOption": "台中",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-41",
-    "text": "【社會】(是非) 每逢選舉時，只要年滿 18 歲的國民都擁有投票選總統的權利。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "higher-42",
-    "text": "【社會】平時養成記帳的習慣，主要目的是什麼？",
-    "leftOption": "了解自己的收支狀況",
-    "rightOption": "讓錢自動變多",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-43",
-    "text": "【社會】哪一個國際組織的主要目的是維護世界和平？",
-    "leftOption": "聯合國 (UN)",
-    "rightOption": "世界衛生組織 (WHO)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-44",
-    "text": "【社會】(是非) 法律規定騎乘機車必須戴安全帽。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-45",
-    "text": "【社會】早期台灣的「一府二鹿三艋舺」，「一府」指的是現在的哪裡？",
-    "leftOption": "台南",
-    "rightOption": "台北",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-46",
-    "text": "【生活/綜合】在網路上收到不明連結時，正確的做法是什麼？",
-    "leftOption": "不要點擊，直接刪除",
-    "rightOption": "點開看看是不是中獎了",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-47",
-    "text": "【生活/綜合】(是非) 遇到有人突然昏倒，可以先大聲呼叫並撥打 119 求救。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-48",
-    "text": "【生活/綜合】進入青春期後，身體開始產生變化，這時候我們應該怎麼面對？",
-    "leftOption": "保持清潔，以健康的心態接受",
-    "rightOption": "覺得很丟臉，不敢跟家人說",
-    "correctAnswer": "left"
-  },
-  {
-    "id": "higher-49",
-    "text": "【生活/綜合】(是非) 設定網路密碼時，用自己的生日最安全。",
-    "leftOption": "⭕ (對)",
-    "rightOption": "❌ (錯)",
-    "correctAnswer": "right"
-  },
-  {
-    "id": "higher-50",
-    "text": "【生活/綜合】如果同學被霸凌，你應該怎麼做最合適？",
-    "leftOption": "告訴老師或長輩",
-    "rightOption": "假裝沒看到",
-    "correctAnswer": "left"
-  }
+  // 國語 1-15
+  { "id": "higher-1", "text": "【國語】「破釜沉舟」這個成語比喻什麼？", "leftOption": "船隻破洞沉沒", "rightOption": "做事果決，義無反顧", "correctAnswer": "right" },
+  { "id": "higher-2", "text": "【國語】(是非) 「汗牛充棟」是用來形容書籍極多。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-3", "text": "【國語】「罄竹難（ ）」，括號內應填入哪個字？", "leftOption": "數", "rightOption": "書", "correctAnswer": "right" },
+  { "id": "higher-4", "text": "【國語】下列哪一首詩是唐代詩人李白的作品？", "leftOption": "絕句", "rightOption": "靜夜思", "correctAnswer": "right" },
+  { "id": "higher-5", "text": "【國語】(是非) 「太陽公公對我微笑」使用了擬人修辭。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-6", "text": "【國語】「一丘之貉」通常帶有什麼樣的感情色彩？", "leftOption": "褒義（讚美）", "rightOption": "貶義（批評）", "correctAnswer": "right" },
+  { "id": "higher-7", "text": "【國語】「出爾反爾」的意思是？", "leftOption": "說話做事反覆無常", "rightOption": "出去玩又馬上回來", "correctAnswer": "left" },
+  { "id": "higher-8", "text": "【國語】(是非) 律詩的頷聯和頸聯必須對仗。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-9", "text": "【國語】「杞人憂天」比喻什麼？", "leftOption": "天氣變化很大", "rightOption": "缺乏根據的無謂憂慮", "correctAnswer": "right" },
+  { "id": "higher-10", "text": "【國語】「司空見慣」的意思是？", "leftOption": "從來沒看過", "rightOption": "經常看到，不足為奇", "correctAnswer": "right" },
+  { "id": "higher-11", "text": "【國語】(是非) 「鼎鼎大名」和「默默無聞」是相似詞。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "right" },
+  { "id": "higher-12", "text": "【國語】「風聲鶴（ ）」，括號內應填入哪個字？", "leftOption": "唳", "rightOption": "淚", "correctAnswer": "left" },
+  { "id": "higher-13", "text": "【國語】寫文章時，用來引用別人說過的話的標點符號是？", "leftOption": "引號「」", "rightOption": "書名號《》", "correctAnswer": "left" },
+  { "id": "higher-14", "text": "【國語】(是非) 古人說的「而立之年」是指三十歲。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-15", "text": "【國語】「千鈞一髮」是用來形容什麼情況？", "leftOption": "情況非常危險", "rightOption": "頭髮很重", "correctAnswer": "left" },
+  // 數學 16-30
+  { "id": "higher-16", "text": "【數學】0.5 換算成分數是多少？", "leftOption": "1/2", "rightOption": "1/5", "correctAnswer": "left" },
+  { "id": "higher-17", "text": "【數學】12 和 18 的最大公因數是多少？", "leftOption": "36", "rightOption": "6", "correctAnswer": "right" },
+  { "id": "higher-18", "text": "【數學】(是非) 質數是指只有 1 和自己兩個因數的整數。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-19", "text": "【數學】一個正方體的邊長是 3 公分，它的體積是多少立方公分？", "leftOption": "27", "rightOption": "9", "correctAnswer": "left" },
+  { "id": "higher-20", "text": "【數學】半徑 10 公分的圓，它的直徑是多少公分？", "leftOption": "20", "rightOption": "5", "correctAnswer": "left" },
+  { "id": "higher-21", "text": "【數學】(是非) 距離除以時間等於速率。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-22", "text": "【數學】一件衣服定價 1000 元，打八折後是多少錢？", "leftOption": "200 元", "rightOption": "800 元", "correctAnswer": "right" },
+  { "id": "higher-23", "text": "【數學】3/4 加上 1/4 等於多少？", "leftOption": "1", "rightOption": "4/8", "correctAnswer": "left" },
+  { "id": "higher-24", "text": "【數學】(是非) 圓周率大約等於 3.14。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-25", "text": "【數學】25% 換算成小數是多少？", "leftOption": "0.25", "rightOption": "2.5", "correctAnswer": "left" },
+  { "id": "higher-26", "text": "【數學】一個三角形的底是 10，高是 5，面積是多少？", "leftOption": "25", "rightOption": "50", "correctAnswer": "left" },
+  { "id": "higher-27", "text": "【數學】(是非) 1 公升等於 1000 毫升。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-28", "text": "【數學】50 的 20% 是多少？", "leftOption": "10", "rightOption": "25", "correctAnswer": "left" },
+  { "id": "higher-29", "text": "【數學】如果 x + 5 = 12，那 x 是多少？", "leftOption": "7", "rightOption": "17", "correctAnswer": "left" },
+  { "id": "higher-30", "text": "【數學】(是非) 任何大於 0 的偶數都能被 2 整除。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  // 社會 31-45
+  { "id": "higher-31", "text": "【社會】台灣最高的山是哪一座？", "leftOption": "玉山", "rightOption": "阿里山", "correctAnswer": "left" },
+  { "id": "higher-32", "text": "【社會】(是非) 台灣是位於太平洋上的一個島嶼。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-33", "text": "【社會】清朝時期，負責在台灣推動現代化建設的巡撫是誰？", "leftOption": "鄭成功", "rightOption": "劉銘傳", "correctAnswer": "right" },
+  { "id": "higher-34", "text": "【社會】政府的權力分為行政、立法和什麼？", "leftOption": "軍事", "rightOption": "司法", "correctAnswer": "right" },
+  { "id": "higher-35", "text": "【社會】(是非) 憲法是國家最高的法律，其他法律不能抵觸憲法。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-36", "text": "【社會】台灣四面環海，東邊面對的是哪一個大洋？", "leftOption": "大西洋", "rightOption": "太平洋", "correctAnswer": "right" },
+  { "id": "higher-37", "text": "【社會】為了保護環境，購買家電時可以認明什麼標章？", "leftOption": "認證標章", "rightOption": "節能標章", "correctAnswer": "right" },
+  { "id": "higher-38", "text": "【社會】(是非) 股票和 ETF 都是現代人常見的投資理財工具。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-39", "text": "【社會】世界上人口最多的洲是哪一洲？", "leftOption": "非洲", "rightOption": "亞洲", "correctAnswer": "right" },
+  { "id": "higher-40", "text": "【社會】台灣有「科技重鎮」之稱的科學園區最早設立在哪個城市？", "leftOption": "新竹", "rightOption": "台中", "correctAnswer": "left" },
+  { "id": "higher-41", "text": "【社會】(是非) 每逢選舉時，只要年滿 18 歲的國民都擁有投票選總統的權利。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "left" },
+  { "id": "higher-42", "text": "【社會】平時養成記帳的習慣，主要目的是什麼？", "leftOption": "了解自己的收支狀況", "rightOption": "讓錢自動變多", "correctAnswer": "left" },
+  { "id": "higher-43", "text": "【社會】哪一個國際組織的主要目的是維護世界和平？", "leftOption": "聯合國 (UN)", "rightOption": "世界衛生組織 (WHO)", "correctAnswer": "left" },
+  { "id": "higher-44", "text": "【社會】(是非) 法律規定騎乘機車必須戴安全帽。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-45", "text": "【社會】早期台灣的「一府二鹿三艋舺」，「一府」指的是現在的哪裡？", "leftOption": "台南", "rightOption": "台北", "correctAnswer": "left" },
+  // 綜合 46-60
+  { "id": "higher-46", "text": "【生活/綜合】在網路上收到不明連結時，正確的做法是什麼？", "leftOption": "不要點擊，直接刪除", "rightOption": "點開看看是不是中獎了", "correctAnswer": "left" },
+  { "id": "higher-47", "text": "【生活/綜合】(是非) 遇到有人突然昏倒，可以先大聲呼叫並撥打 119 求救。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-48", "text": "【生活/綜合】進入青春期後，身體開始產生變化，這時候我們應該怎麼面對？", "leftOption": "覺得很丟臉，不敢跟家人說", "rightOption": "保持清潔，以健康的心態接受", "correctAnswer": "right" },
+  { "id": "higher-49", "text": "【生活/綜合】(是非) 設定網路密碼時，用自己的生日最安全。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "left" },
+  { "id": "higher-50", "text": "【生活/綜合】如果同學被霸凌，你應該怎麼做最合適？", "leftOption": "告訴老師或長輩", "rightOption": "假裝沒看到", "correctAnswer": "left" },
+  { "id": "higher-51", "text": "【社會】(是非) 台灣是少子化問題日益嚴重的國家之一。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-52", "text": "【社會】下列哪一個不是台灣的鄰國？", "leftOption": "美國", "rightOption": "菲律賓", "correctAnswer": "left" },
+  { "id": "higher-53", "text": "【社會】(是非) 誠實納稅是國民應盡的義務。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-54", "text": "【社會】台灣的「雨都」通常是指哪一個城市？", "leftOption": "高雄", "rightOption": "基隆", "correctAnswer": "right" },
+  { "id": "higher-55", "text": "【社會】(是非) 全球暖化會導致海平面上升。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-56", "text": "【社會】下列哪種資源屬於不可再生能源？", "leftOption": "太陽能", "rightOption": "煤炭", "correctAnswer": "right" },
+  { "id": "higher-57", "text": "【社會】(是非) 中華民國的國旗包含青天、白日、滿地紅三種顏色。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-58", "text": "【社會】台灣每年五、六月常見的降雨現象稱為什麼？", "leftOption": "陣雨", "rightOption": "梅雨", "correctAnswer": "right" },
+  { "id": "higher-59", "text": "【社會】(是非) 台灣目前只有台北市和高雄市有捷運運作。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "left" },
+  { "id": "higher-60", "text": "【社會】台灣最長的河流是哪一條？", "leftOption": "濁水溪", "rightOption": "淡水河", "correctAnswer": "left" },
+  { "id": "higher-61", "text": "【社會】(是非) 每個公民都有受基本教育的權利。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-62", "text": "【社會】下列哪一個不是民主國家的特徵？", "leftOption": "定期舉行選舉", "rightOption": "政府完全控制言論", "correctAnswer": "right" },
+  { "id": "higher-63", "text": "【社會】(是非) 合理分配所得可以縮小貧富懸殊。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-64", "text": "【社會】台灣位於哪兩個板塊的交界處？", "leftOption": "太平洋板塊與大西洋板塊", "rightOption": "歐亞板塊與菲律賓海板塊", "correctAnswer": "right" },
+  { "id": "higher-65", "text": "【社會】(是非) 台灣的農業目前已經完全數位化自動耕作。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "right" },
+  { "id": "higher-66", "text": "【社會】下列哪一種動物被視為台灣的國寶魚？", "leftOption": "吳郭魚", "rightOption": "櫻花鉤吻鮭", "correctAnswer": "right" },
+  { "id": "higher-67", "text": "【社會】(是非) 垃圾分類回收後，不能減輕垃圾掩埋場的負擔。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "right" },
+  { "id": "higher-68", "text": "【社會】台灣的主要宗教信仰不包括下列哪一項？", "leftOption": "印度教", "rightOption": "道教", "correctAnswer": "left" },
+  { "id": "higher-69", "text": "【社會】(是非) 網路霸凌也是霸凌的一種，具有法律責任。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-70", "text": "【社會】台灣的最高行政機關是？", "leftOption": "行政院", "rightOption": "總統府", "correctAnswer": "left" },
+  { "id": "higher-71", "text": "【社會】(是非) 台灣的護照可以通往全世界所有國家且不需要簽證。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "right" },
+  { "id": "higher-72", "text": "【社會】下列哪一種方式可以最有效地減少碳排？", "leftOption": "多買一件新衣服", "rightOption": "搭乘大眾運輸工具", "correctAnswer": "right" },
+  { "id": "higher-73", "text": "【社會】(是非) 在台灣，總統是由公民直接投票選舉產生的。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-74", "text": "【社會】下列哪一個城市不屬於台灣的直轄市？", "leftOption": "桃園市", "rightOption": "苗栗縣", "correctAnswer": "right" },
+  { "id": "higher-75", "text": "【社會】(是非) 推動綠能發電是為了減少依賴化石燃料。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-76", "text": "【國語】「望塵莫及」比喻什麼？", "leftOption": "遠遠落後，趕不上", "rightOption": "塵土飛揚，看不清楚", "correctAnswer": "left" },
+  { "id": "higher-77", "text": "【國語】(是非) 「名列前茅」是用來形容考試成績很好，排在前面。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-78", "text": "【國語】「不（ ）思索」，括號內應填入哪個字？", "leftOption": "假", "rightOption": "加", "correctAnswer": "left" },
+  { "id": "higher-79", "text": "【國語】「濫竽充數」這個成語的主角是誰？", "leftOption": "南郭先生", "rightOption": "北郭先生", "correctAnswer": "left" },
+  { "id": "higher-80", "text": "【國語】(是非) 「亡羊補牢」的意思是出了問題後趕快設法補救，還不算遲。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-81", "text": "【數學】一打鉛筆有 12 支，那買了 8 打共有幾支？", "leftOption": "96", "rightOption": "86", "correctAnswer": "left" },
+  { "id": "higher-82", "text": "【數學】(是非) 0 除以任何非零的數字，答案都是 0。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-83", "text": "【數學】時針走一圈是 12 個小時，那分針走一圈是多少分鐘？", "leftOption": "60 分鐘", "rightOption": "12 分鐘", "correctAnswer": "left" },
+  { "id": "higher-84", "text": "【數學】一個五邊形的內角和是多少度？", "leftOption": "360 度", "rightOption": "540 度", "correctAnswer": "right" },
+  { "id": "higher-85", "text": "【數學】(是非) 平行四邊形的對邊不但相等，而且互相平行。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-86", "text": "【自然】人體內負責把血液送到全身的器官是哪一個？", "leftOption": "肺臟", "rightOption": "心臟", "correctAnswer": "right" },
+  { "id": "higher-87", "text": "【自然】(是非) 植物的光合作用需要葉綠體和光照。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-88", "text": "【自然】哪一種現象會導致海平面上升，對島嶼國家造成威脅？", "leftOption": "全球暖化", "rightOption": "地震", "correctAnswer": "left" },
+  { "id": "higher-89", "text": "【自然】(是非) 大氣層中的臭氧層可以保護我們不受紫外線傷害。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-90", "text": "【自然】槓桿原理中，距離支點越遠，施力會越如何？", "leftOption": "越費力", "rightOption": "越省力", "correctAnswer": "right" },
+  { "id": "higher-91", "text": "【社會】如果要去「挽肉と米」台北旗艦店吃飯，它通常位於哪一個行政區？", "leftOption": "中山區或中正區附近", "rightOption": "信義區", "correctAnswer": "left" },
+  { "id": "higher-92", "text": "【社會】(是非) 排球比賽中，自由球員（Libero）不能進行攔網或扣球。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-93", "text": "【生活】在 Pokémon TCG Pocket 遊戲中，如果想要抽到強力的卡牌，需要消耗什麼？", "leftOption": "能量或卡包包數", "rightOption": "體力值", "correctAnswer": "left" },
+  { "id": "higher-94", "text": "【生活】(是非) 洗完臉後使用含有金縷梅成分的化妝水，通常有舒緩皮膚的效果。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-95", "text": "【自然】如果使用高壓電槍清洗特斯拉，要注意水壓會不會傷到什麼部分？", "leftOption": "充電孔或感應器", "rightOption": "方向盤", "correctAnswer": "left" },
+  { "id": "higher-96", "text": "【社會】中壢青埔特區的發展，主要是受惠於哪兩種交通設施的串聯？", "leftOption": "高鐵與桃園機場捷運", "rightOption": "火車與公車", "correctAnswer": "left" },
+  { "id": "higher-97", "text": "【社會】(是非) 台灣的職業重建服務，主要是為了協助身心障礙者重新回到職場。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-98", "text": "【自然】在冬天去長野滑雪，雪場的降雪主要是大氣中的水蒸氣遇到了什麼？", "leftOption": "極低溫的冷空氣", "rightOption": "溫暖的氣流", "correctAnswer": "left" },
+  { "id": "higher-99", "text": "【生活】如果你是排球隊的隊長，當隊員發生爭執時，最合適的做法是什麼？", "leftOption": "引導隊員冷靜溝通，專注於球賽", "rightOption": "加入吵架", "correctAnswer": "left" },
+  { "id": "higher-100", "text": "【生活】(是非) 「早安健康」是一種類型的健康資訊平台，內容通常包含養生與飲食建議。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-101", "text": "【社會】在泰國清邁，如果要參觀著名的寺廟（如素帖寺），必須注意什麼禮儀？", "leftOption": "大聲唱歌", "rightOption": "穿著適當、不暴露，且要脫鞋進入", "correctAnswer": "right" },
+  { "id": "higher-102", "text": "【社會】(是非) 製作網頁時，CSS 的主要功能是用來美化網頁的版面、顏色和字體。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-103", "text": "【自然】植物的根除了吸收水分之外，還有什麼功能？", "leftOption": "用來開花", "rightOption": "固定植物在土壤中", "correctAnswer": "right" },
+  { "id": "higher-104", "text": "【自然】(是非) 靜電現象通常在乾燥的冬天比較容易發生。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-105", "text": "【自然】人體正常的體溫大約是在攝氏幾度左右？", "leftOption": "39 ~ 40 度", "rightOption": "36.5 ~ 37 度", "correctAnswer": "right" },
+  { "id": "higher-106", "text": "【社會】(是非) 在台灣，總統是由公民直接投票選舉產生的。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-107", "text": "【社會】如果要舉辦一場關於「排球教學技巧」的線上研討會，適合使用哪種工具來邀請大家？", "leftOption": "寫信投到信箱", "rightOption": "設計並發送 Google 表單或網頁", "correctAnswer": "right" },
+  { "id": "higher-108", "text": "【生活】(是非) 將狗狗的關節保健品（如葡萄糖胺）混在飼料中餵食，是一種常見的工作。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-109", "text": "【社會】台灣的「桃園國際機場」地理位置最靠近哪一個行政區？", "leftOption": "大園區", "rightOption": "中壢區", "correctAnswer": "left" },
+  { "id": "higher-110", "text": "【社會】(是非) 日本環球影城的門票價格，會隨淡旺季調整，這是一種動態定價機制。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-111", "text": "【自然】太陽能板發電是利用什麼能量轉換成電能？", "leftOption": "風能", "rightOption": "光能", "correctAnswer": "right" },
+  { "id": "higher-112", "text": "【自然】(是非) 雖然月亮會繞著地球跑，但它並不是行星。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-113", "text": "【自然】在滑雪特技中，如果有個動作叫「空翻」，它是利用了什麼原理來保持轉動？", "leftOption": "萬有引力", "rightOption": "角動量守恆", "correctAnswer": "right" },
+  { "id": "higher-114", "text": "【社會】(是非) 台灣是世界上半導體與 AI 晶片代工的重要基地。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-115", "text": "【自然】如果長期不使用電動車，為了保護大電池，建議將電量維持在什麼範圍較好？", "leftOption": "20% ~ 80%", "rightOption": "0%（徹底放電）", "correctAnswer": "left" },
+  { "id": "higher-116", "text": "【國語】「老馬識途」比喻什麼樣的人？", "leftOption": "很會照顧馬的人", "rightOption": "經驗豐富的人", "correctAnswer": "right" },
+  { "id": "higher-117", "text": "【國語】(是非) 「名列前茅」是用來形容成績優異、位居領先。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-118", "text": "【國語】「望塵莫及」的意思是？", "leftOption": "遠遠落後，趕不上對方", "rightOption": "灰塵太多看不清楚", "correctAnswer": "left" },
+  { "id": "higher-119", "text": "【國語】(是非) 「虎頭蛇尾」是用來批評人做事有始無終。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-120", "text": "【國語】「胸有成竹」比喻什麼？", "leftOption": "非常有把握", "rightOption": "胸部長了竹子", "correctAnswer": "left" },
+  { "id": "higher-121", "text": "【國語】(是非) 「畫餅充飢」比喻徒具形式，無法解決實際問題。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-122", "text": "【國語】「一諾千金」用來形容一個人如何？", "leftOption": "非常守信用", "rightOption": "很有錢", "correctAnswer": "left" },
+  { "id": "higher-123", "text": "【國語】(是非) 「掩耳盜鈴」是比喻自己欺騙自己的行為。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-124", "text": "【國語】「朝三暮四」原本是說養猴子的故事，現在比喻什麼？", "leftOption": "非常準時", "rightOption": "心志不定、反覆無常", "correctAnswer": "right" },
+  { "id": "higher-125", "text": "【國語】(是非) 「不恥下問」是形容一個人肯虛心向學問。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-126", "text": "【數學】三角形的內角和是多少度？", "leftOption": "360 度", "rightOption": "180 度", "correctAnswer": "right" },
+  { "id": "higher-127", "text": "【數學】(是非) 正方形四個邊一樣長，四個角都是直角。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-128", "text": "【數學】1 到 10 的質數總共有幾個？", "leftOption": "4 個（2,3,5,7）", "rightOption": "5 個", "correctAnswer": "left" },
+  { "id": "higher-129", "text": "【數學】(是非) 分數 1/2 等於 0.5。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-130", "text": "【數學】半徑為 10 的圓形，其面積大約是多少？", "leftOption": "62.8", "rightOption": "314", "correctAnswer": "right" },
+  { "id": "higher-131", "text": "【數學】(是非) 直角三角形中，最長的邊叫做斜邊。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-132", "text": "【數學】一公斤等於幾公克？", "leftOption": "100 公克", "rightOption": "1000 公克", "correctAnswer": "right" },
+  { "id": "higher-133", "text": "【數學】(是非) 平行四邊形的對邊不但平行而且等長。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "right" },
+  { "id": "higher-134", "text": "【數學】100 除以 4 等於多少？", "leftOption": "20", "rightOption": "25", "correctAnswer": "right" },
+  { "id": "higher-135", "text": "【數學】(是非) 分母不能為 0。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-136", "text": "【自然】光在真空中前進的速度大約是多少？", "leftOption": "每秒 30 萬公里", "rightOption": "每秒 340 公尺", "correctAnswer": "left" },
+  { "id": "higher-137", "text": "【自然】(是非) 植物主要是透過光合作用來獲得養分。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-138", "text": "【自然】下列哪一種動物屬於哺乳類？", "leftOption": "鯨魚", "rightOption": "鯊魚", "correctAnswer": "left" },
+  { "id": "higher-139", "text": "【自然】(是非) 電流的方向是從電池的負極流向正極。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "right" },
+  { "id": "higher-140", "text": "【自然】牛頓發現了什麼，解釋了蘋果為什麼會往下掉？", "leftOption": "萬有引力", "rightOption": "浮力", "correctAnswer": "left" },
+  { "id": "higher-141", "text": "【自然】(是非) 聲音的傳播需要介質。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-142", "text": "【自然】哪一種現象是由於地球公轉傾斜造成的？", "leftOption": "晝夜交替", "rightOption": "四季變化", "correctAnswer": "right" },
+  { "id": "higher-143", "text": "【自然】(是非) 所有的植物都會開花。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "right" },
+  { "id": "higher-144", "text": "【自然】水蒸氣遇冷變成水滴，這個過程稱為什麼？", "leftOption": "蒸發", "rightOption": "凝結", "correctAnswer": "right" },
+  { "id": "higher-145", "text": "【自然】(是非) 大氣中含量最多的氣體是氧氣。", "leftOption": "❌", "rightOption": "⭕", "correctAnswer": "left" },
+  { "id": "higher-146", "text": "【自然】電池串聯後，總電壓會如何變化？", "leftOption": "變小", "rightOption": "變大", "correctAnswer": "right" },
+  { "id": "higher-147", "text": "【自然】(是非) 把鹽溶解在水裡是屬於物理變化。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-148", "text": "【自然】哪一種光學儀器可以幫助我們看清微小的東西？", "leftOption": "望遠鏡", "rightOption": "顯微鏡", "correctAnswer": "right" },
+  { "id": "higher-149", "text": "【自然】(是非) 地震的震級 (規模) 是表示能量釋放的大小。", "leftOption": "⭕", "rightOption": "❌", "correctAnswer": "left" },
+  { "id": "higher-150", "text": "【自然】下列哪一項是再生能源？", "leftOption": "太陽能", "rightOption": "石油", "correctAnswer": "left" }
 ];
